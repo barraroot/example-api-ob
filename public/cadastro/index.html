@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="relative text-white flex items-center justify-center min-h-screen bg-[#0f0f0f] overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img src="assets/fundo.svg" alt="Fundo" class="w-full h-full object-cover opacity-10">
+    </div>
+
+    <div class="w-full max-w-2xl mx-4 p-6 bg-[#121212]/80 rounded-xl shadow-xl z-10">
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h2 class="text-2xl font-bold">Cadastre-se</h2>
+                <p class="text-sm text-gray-400">Crie uma nova conta</p>
+            </div>
+            <img src="assets/logo.png" alt="Logo" class="w-28">
+        </div>
+
+        <form class="space-y-4">
+            <div>
+                <label class="text-sm font-medium block mb-1">Nome</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </span>
+                    <input type="text" name="name" placeholder="Digite seu nome completo"
+                        class="w-full pl-10 pr-3 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#00CDE9]">
+                </div>
+            </div>
+
+            <div>
+                <label class="text-sm font-medium block mb-1">E-mail</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-10 6L2 7" />
+                        </svg>
+                    </span>
+                    <input type="email" name="email" placeholder="Digite seu e-mail"
+                        class="w-full pl-10 pr-3 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#00CDE9]">
+                </div>
+            </div>
+
+            <div>
+                <label class="text-sm font-medium block mb-1">Telefone</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.5 19.5 0 0 1-15.64-15.64A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.1.94.3 1.86.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.95.4 1.87.6 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                    </span>
+                    <input type="text" name="phone" placeholder="+55 (00) 00000-0000"
+                        class="w-full pl-10 pr-3 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#00CDE9]">
+                </div>
+            </div>
+
+            <div>
+                <label class="text-sm font-medium block mb-1">Senha</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M15.5 7.5 21 2 11.4 11.6" />
+                            <circle cx="7.5" cy="15.5" r="5.5" />
+                        </svg>
+                    </span>
+                    <input id="senhaCadastro" type="password" name="password" placeholder="Digite sua senha"
+                        class="w-full pl-10 pr-10 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#00CDE9]">
+                    <button type="button" onclick="toggleSenhaCadastro()"
+                        class="absolute inset-y-0 right-3 flex items-center text-gray-400">
+                        <svg id="iconeOlhoCadastro" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M2.06 12.35a10.75 10.75 0 0 1 19.88 0" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <script>
+                function toggleSenhaCadastro() {
+                    const senha = document.getElementById("senhaCadastro");
+                    const icone = document.getElementById("iconeOlhoCadastro");
+
+                    if (senha.type === "password") {
+                        senha.type = "text";
+                        icone.innerHTML = `
+                      <path d="M17.94 17.94A10.75 10.75 0 0 1 2.06 12.35a1 1 0 0 1 0-.7A10.75 10.75 0 0 1 12 6.25a10.55 10.55 0 0 1 4.38.94" />
+                      <path d="M22 22 2 2" />
+                      <circle cx="12" cy="12" r="3" />
+                    `;
+                    } else {
+                        senha.type = "password";
+                        icone.innerHTML = `
+                      <path d="M2.06 12.35a10.75 10.75 0 0 1 19.88 0" />
+                      <circle cx="12" cy="12" r="3" />
+                    `;
+                    }
+                }
+            </script>
+
+
+            <div class="flex items-center gap-2">
+                <label for="terms" class="relative flex items-center cursor-pointer">
+                    <input type="checkbox" id="terms" class="peer sr-only">
+                    <div
+                        class="w-5 h-5 rounded-md border border-[#00CDE9] peer-checked:bg-[#00CDE9] flex items-center justify-center transition-all">
+                        <svg class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                </label>
+                <label for="terms" class="text-xs md:text-sm"><a href="#" class="text-[#00CDE9] hover:underline">Eu
+                        aceito os Termos e Condições</a></label>
+            </div>
+
+
+            <button type="submit"
+                class="w-full bg-[#00CDE9] text-white py-2 rounded-xl hover:bg-[#00bad1] transition-colors text-sm">Criar
+                Conta</button>
+
+            <a href="../login/index.html" class="block text-center text-sm text-[#00CDE9] hover:underline">Já tem uma
+                conta? Entrar</a>
+        </form>
+    </div>
+</body>
+
+</html>
