@@ -2,8 +2,12 @@ const express = require("express");
 const axios = require("axios");
 const path = require("path"); // Importar o módulo path
 
+
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Middleware para servir arquivos estáticos da pasta 'public'
+app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware para parsear JSON no corpo da requisição
 app.use(express.json());
