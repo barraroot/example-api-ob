@@ -16,8 +16,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Constantes da API externa
-const EXTERNAL_API_BASE_URL = "https://backoffice.demo-corretora.com/api/v1";
-const REGISTER_TOKEN = "2eb1dc49-cd9a-4408-a871-902cffd9ce1c";
+const EXTERNAL_API_BASE_URL = "https://backoffice.brandopties.com/api/v1";
+const REGISTER_TOKEN = "758b7fe1-6f7b-4c3a-a9b1-c81f746da091";
 
 //Rota para servir a página inicial HTML
 app.get("", (req, res) => { // Renomeado para evitar conflito com POST /login

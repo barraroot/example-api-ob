@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Adicionar Axios via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
 </head>
 
 <body class="relative text-white flex items-center justify-center min-h-screen bg-[#0f0f0f] overflow-hidden">
@@ -22,7 +24,7 @@
       </div>
       <img src="assets/logo.png" alt="Logo" style="width: 30%;">
     </div>
-    <form class="space-y-4">
+    <form class="space-y-4" id="loginForm">
       <div>
         <label class="text-sm font-medium block mb-1">E-mail</label>
         <div class="relative">
@@ -33,7 +35,7 @@
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
             </svg>
           </span>
-          <input type="email" placeholder="Digite seu e-mail"
+          <input type="email" placeholder="Digite seu e-mail" name="email" id="email"
             class="w-full pl-10 pr-3 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#00CDE9]">
         </div>
       </div>
@@ -48,7 +50,7 @@
               <circle cx="7.5" cy="15.5" r="5.5"></circle>
             </svg>
           </span>
-          <input id="senha" type="password" placeholder="Digite sua senha"
+          <input id="senha" type="password" placeholder="Digite sua senha" name="senha" 
             class="w-full pl-10 pr-10 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#00CDE9]">
           <button type="button" onclick="toggleSenha()"
             class="absolute inset-y-0 right-3 flex items-center text-gray-400">
@@ -63,38 +65,110 @@
         </div>
       </div>
 
-      <script>
-        function toggleSenha() {
-          const senha = document.getElementById("senha");
-          const icone = document.getElementById("iconeOlho");
-
-          if (senha.type === "password") {
-            senha.type = "text";
-            icone.innerHTML = `
-              <path d="M17.94 17.94A10.75 10.75 0 0 1 2.06 12.35a1 1 0 0 1 0-.7A10.75 10.75 0 0 1 12 6.25a10.55 10.55 0 0 1 4.38.94" />
-              <path d="M22 22 2 2" />
-              <circle cx="12" cy="12" r="3" />
-            `;
-          } else {
-            senha.type = "password";
-            icone.innerHTML = `
-              <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
-              <circle cx="12" cy="12" r="3"></circle>
-            `;
-          }
-        }
-      </script>
-
       <div class="text-right">
         <a href="/reset-password-page" class="text-sm text-[#00CDE9] hover:underline">Esqueceu a senha?</a>
       </div>
+
+      <!-- Div para exibir mensagens de erro/sucesso -->
+      <div id="messageArea" class="text-sm text-center"></div>
+
       <button type="submit"
         class="w-full bg-[#00CDE9] text-white py-2 rounded-xl hover:bg-[#00bad1] transition-colors text-sm">Entrar</button>
       <a href="/cadastro" class="block text-center text-sm text-[#00CDE9] hover:underline">Não tem uma
         conta? Cadastre-se</a>
     </form>
   </div>
-  
+
+
+  <script>
+    function toggleSenha() {
+      const senha = document.getElementById("senha");
+      const icone = document.getElementById("iconeOlho");
+
+      if (senha.type === "password") {
+        senha.type = "text";
+        icone.innerHTML = `
+          <path d="M17.94 17.94A10.75 10.75 0 0 1 2.06 12.35a1 1 0 0 1 0-.7A10.75 10.75 0 0 1 12 6.25a10.55 10.55 0 0 1 4.38.94" />
+          <path d="M22 22 2 2" />
+          <circle cx="12" cy="12" r="3" />
+        `;
+      } else {
+        senha.type = "password";
+        icone.innerHTML = `
+          <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        `;
+      }
+    }
+
+
+    const form = document.getElementById("loginForm");
+    const messageArea = document.getElementById("messageArea");
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        messageArea.textContent = ""; // Limpa mensagens anteriores
+        messageArea.className = "text-sm text-center"; // Reseta classes
+
+        const formData = new FormData(form);
+        const password = formData.get("senha");
+        const email = formData.get("email");
+
+        const dataToSend = {
+            password: password,
+            email: email,
+        };
+
+        try {
+            // Usar Axios para fazer a requisição POST
+            const response = await axios.post("/login", dataToSend, {
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            });
+
+            // Com Axios, a resposta de sucesso (status 2xx) entra aqui diretamente
+            // e os dados já estão em response.data
+            const result = response.data;
+            messageArea.textContent = result.message || "Login realizado com sucesso! Abrindo sistema...";
+            messageArea.classList.add("text-green-500");
+            form.reset(); // Limpa o formulário
+            window.location.href = result.url_access; // Redireciona para a página de login
+        } catch (error) {
+            // Erros (status não-2xx ou erros de rede) entram aqui
+            console.error("Erro durante o cadastro (Axios):", error);
+            let errorMessage = "Ocorreu um erro ao tentar cadastrar.";
+
+            if (error.response) {
+                // O servidor respondeu com um status fora do range 2xx
+                const errorData = error.response.data;
+                console.error("Dados do erro da API:", errorData);
+                if (errorData.error) {
+                    errorMessage = errorData.error;
+                    if (errorData.missing) {
+                        errorMessage += ` Campos faltando: ${errorData.missing.join(", ")}`;
+                    }
+                } else if (errorData.message && errorData.errorDetails) {
+                    errorMessage = `${errorData.message} Detalhes: ${JSON.stringify(errorData.errorDetails)}`;
+                } else if (errorData.message) {
+                    errorMessage = errorData.message;
+                }
+            } else if (error.request) {
+                // A requisição foi feita mas nenhuma resposta foi recebida
+                console.error("Nenhuma resposta recebida:", error.request);
+                errorMessage = "Não foi possível conectar ao servidor. Verifique sua conexão.";
+            } else {
+                // Algo aconteceu ao configurar a requisição que acionou um erro
+                console.error("Erro na configuração da requisição:", error.message);
+                errorMessage = `Erro ao preparar requisição: ${error.message}`;
+            }
+
+            messageArea.textContent = errorMessage;
+            messageArea.classList.add("text-red-500");
+        }
+    });        
+  </script>
+
 </body>
 
 </html>
