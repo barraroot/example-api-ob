@@ -169,4 +169,6 @@ app.listen(port, "0.0.0.0", () => {
   console.log(`Página de login: http://localhost:${port}/login-page`);
   console.log(`Página de recuperar senha: http://localhost:${port}/reset-password-page`);
 });
-
+/*
+  cliente: homeinfinity.io
+*/
