@@ -169,4 +169,8 @@ app.listen(port, "0.0.0.0", () => {
   console.log(`Página de login: http://localhost:${port}/login-page`);
   console.log(`Página de recuperar senha: http://localhost:${port}/reset-password-page`);
 });
-
+/*
+Verssion BrandOptions 1.0.0
+Author: BrandOptions
+Date: 2025-05-07
+*/
