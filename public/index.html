@@ -1,945 +1,947 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scrollbar-thin scroll-smooth">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity Home | A Única Corretora Private Global.</title>
+    <title>Grivo | Negocie com Segurança</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preload" href="/assets/images/bg-hero.webp" as="image">
-    <link rel="preload" href="/assets/images/hero-dashboard.webp" as="image">
-    <meta name="description" content="Conectados ao maior pool de liquidez suíço. Seu capital, no mais alto nível, com segurança e transparência!">
-    <meta name="application-name" content="Infinity Home">
-    <link rel="author" href="https://infinityhome.io">
-    <meta name="author" content="Infinity Home">
-    <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="keywords" content="Infinity Home,corretora private,plataforma exclusiva,investimentos globais,segurança financeira,transparência financeira,corretora suíça,soluções financeiras,plataforma de investimentos">
-    <meta name="referrer" content="origin-when-cross-origin">
-    <meta name="publisher" content="Infinity Home">
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
-    <meta name="category" content="technology">
-    <link rel="canonical" href="https://infinityhome.io">
-    <link rel="alternate" hreflang="pt" href="https://infinityhome.io">
-    <link rel="alternate" hreflang="pt-BR" href="https://infinityhome.io">
-    <meta name="format-detection" content="telephone=no, address=no, email=no">
-    <link rel="icon" href="/icon?a56bf7d158b931a9" type="image/ico" sizes="256x256">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilos adicionais para compatibilidade e interatividade */
-        .menu-hidden {
-            display: none;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            overflow-x: hidden;
+            padding-top: 70px; /* Reduced space for fixed navbar */
         }
-        .accordion-content-hidden {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #9333ea 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        .accordion-content-visible {
-            max-height: 500px; /* Ajuste conforme necessário */
-            transition: max-height 0.5s ease-in;
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
         }
-        .rotate-180 {
-            transform: rotate(180deg);
+        
+        .pulse {
+            animation: pulse 2s infinite;
         }
-        .transition-transform {
-            transition: transform 0.3s ease-in-out;
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+                transform: scale(1.05);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+                transform: scale(1);
+            }
         }
-        /* Estilos para o carousel (básico) */
-        .carousel-container {
-            overflow: hidden;
+        
+        .card-gradient {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .ticker {
+            animation: ticker 30s linear infinite;
+        }
+        
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .copy-trade-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .modern-card {
+            perspective: 1000px;
+        }
+        
+        .modern-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .modern-card:hover .modern-card-inner {
+            transform: rotateY(10deg);
+        }
+        
+        .copy-trade-image {
+            background: url('https://i.imgur.com/HWGEsix.png');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Updated platform background style to fill entire card */
+        .platform-bg {
+            background: url('https://i.imgur.com/pYV9rnI.png');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            opacity: 0.8;
+        }
+        
+        .platform-card-content {
             position: relative;
+            z-index: 1;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 0.5rem;
+            padding: 1rem;
         }
-        .carousel-track {
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Updated background image without blur */
+        .background-image {
+            position: fixed;
+            top: 70px; /* Below navbar */
+            left: 0;
+            width: 100%;
+            height: 70vh; /* Only covers hero section */
+            background-image: url('https://i.imgur.com/feYQlbg.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.9;
+        }
+        
+        .payment-methods {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
         }
-        .carousel-item {
-            flex: 0 0 auto;
-            /* A base será definida via JS ou Tailwind classes */
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 8px;
+            padding: 8px 15px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .payment-method i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .pix-icon {
+            color: #32BBAD;
+        }
+        
+        .usdt-icon {
+            color: #26A17B;
+        }
+        
+        .card-icon {
+            color: #ffffff;
+        }
+        
+        /* USDT logo style */
+        .usdt-logo {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        /* Green return percentage */
+        .return-percentage {
+            color: #10B981;
+            font-weight: 500;
+        }
+
+        /* Feature card with icon on top */
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            margin-bottom: 20px;
+        }
+
+        .feature-content {
+            padding: 0 10px;
+        }
+
+        /* New styles for feature cards with icons on the side */
+        .feature-card-horizontal {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            height: 100%;
+        }
+        
+        .feature-icon-horizontal {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-content-horizontal {
+            flex-grow: 1;
+        }
+
+        /* Button pulse with soft shadow */
+        .btn-pulse {
+            animation: btnPulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        @keyframes btnPulse {
+            0% {
+                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(59, 130, 246, 0.5);
+                transform: scale(1.05);
+            }
+            100% {
+                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+                transform: scale(1);
+            }
+        }
+
+        /* Mobile title break */
+        .title-break {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .title-break {
+                display: inline;
+            }
+        }
+
+        /* New styles for the wider "Comece Agora" button */
+        .cta-button {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 18px 32px;
+            font-size: 1.25rem;
+            animation: pulse 2s infinite;
+        }
+
+        @media (min-width: 768px) {
+            .cta-button {
+                width: auto;
+                padding: 18px 48px;
+            }
+        }
+
+        /* Stats grid style */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .stat-item {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
         }
     </style>
 </head>
-
-<body class="scroll-smooth antialiased bg-neutral-950 text-neutral-300">
-    <header class="sticky top-0 z-50 border-b border-neutral-800 bg-zinc-950">
-        <div class="relative container mx-auto flex h-[4.5rem] w-full items-center justify-between px-3 sm:px-6">
-            <div class="flex items-center justify-center">
-                <button id="mobile-menu-button" class="inline-flex items-center md:hidden enabled:cursor-pointer justify-center gap-1 whitespace-nowrap rounded-lg font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-5 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary hover:bg-neutral-800 aspect-square shrink-0 size-10" type="button" aria-haspopup="dialog" aria-expanded="false">
-                    <i class="fas fa-bars text-white text-xl"></i>
-                    <span class="sr-only">Menu</span>
-                </button>
-                <a class="flex items-center justify-center gap-2 sm:gap-3 ml-2 md:ml-0" href="/">
-                    <span class="sr-only">Página Inicial</span>
-                    <i class="fa-solid fa-shield-halved text-amber-300 text-3xl sm:hidden"></i> <img src="/assets/logo.png" alt="Infinity Home Logo" class="shrink-0 text-white h-8 w-auto max-sm:hidden"> <div data-orientation="vertical" role="none" class="bg-neutral-700 shrink-0 h-6 w-px mx-2 max-sm:hidden"></div>
-                    <span class="text-[0.65rem] leading-tight text-nowrap text-white/75 max-sm:hidden">By Infinity <br>Home </span>
-                </a>
-            </div>
-
-            <!-- <nav aria-label="Main" class="group/navigation-menu hidden md:flex max-w-max flex-1 items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                 <ul class="group flex flex-1 list-none items-center justify-center gap-3">
-                    <li class="relative">
-                        <a class="inline-flex items-center md:w-fit enabled:cursor-pointer gap-1 whitespace-nowrap rounded-lg transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-5 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary h-10 px-4 py-2 w-full justify-center bg-transparent font-medium text-neutral-300 hover:bg-neutral-800/90 hover:text-neutral-200 data-[active=true]:cursor-default data-[active=true]:bg-neutral-800 data-[active=true]:font-semibold data-[active=true]:text-white lg:w-full" data-active="true" href="/">Início</a>
-                    </li>
-                </ul>
-            </nav> -->
-
-             <div class="flex items-center justify-center gap-1 sm:gap-3">
-                <a rel="canonical" class="inline-flex items-center md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap rounded-lg font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary h-10 px-2 py-2 sm:px-4 w-fit text-white hover:bg-zinc-900 hover:text-white max-sm:text-sm max-sm:font-medium" href="/login">
-                    Acesse <i class="fas fa-arrow-right shrink-0 origin-center max-sm:size-3 ml-1"></i>
-                </a>
-                <a rel="canonical" class="inline-flex items-center md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap rounded-lg font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary bg-amber-400 text-black hover:bg-amber-500/90 h-10 px-3 py-2 sm:px-4 w-fit max-sm:text-sm max-sm:font-medium" href="/cadastro">
-                    Abra sua conta <i class="fas fa-external-link-alt shrink-0 origin-center max-sm:size-3 ml-1"></i>
-                </a>
-            </div>
-        </div>
-
-        <div id="mobile-menu-drawer" class="fixed inset-0 z-40 bg-black bg-opacity-50 menu-hidden md:hidden">
-             <div class="fixed top-0 left-0 h-full w-64 bg-zinc-950 shadow-lg p-4 transition-transform transform -translate-x-full">
-                <button id="close-mobile-menu-button" class="absolute top-4 right-4 text-neutral-300 hover:text-white">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
+<body class="min-h-screen">
+    <!-- Fixed Navbar (reduced height) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800 py-3">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <img src="https://i.imgur.com/LrZVH8u.png" alt="Grivo Logo" class="h-8">
+                </div>
+                
+                <div class="flex items-center">
+                    <a class="px-6 py-2 rounded-full gradient-bg text-white hover:shadow-lg transition btn-pulse" href="login">
+                        Entrar
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="scroll-smooth">
-        <section id="hero">
-            <div class="relative isolate w-full max-w-full bg-gradient-to-b from-black to-neutral-900 md:h-[42rem] md:max-h-[42rem]">
-                <img alt="Background Hero" src="/assets/images/bg-hero.webp" class="pointer-events-none absolute top-0 right-0 h-full w-full object-cover" onerror="this.style.display='none'">
-                <div class="relative z-10 mx-auto flex h-full max-w-7xl flex-col px-3">
-                    <div class="flex flex-col items-center justify-center gap-12 pt-12 pb-6 md:pt-18">
-                        <div class="flex flex-col items-center justify-center gap-2">
-                             <img src="/assets/logo.png" alt="Infinity Home Logo" class="shrink-0 text-white mb-6 sm:hidden h-10 w-auto"> <div class="flex flex-col items-center justify-center gap-1">
-                                <svg width="96" height="20" viewBox="0 0 96 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.5034 3.06684L11.9295 5.9425C12.1239 6.34281 12.6425 6.72678 13.08 6.8003L15.6647 7.23328C17.3176 7.51105 17.7066 8.72013 16.5155 9.91288L14.5061 11.9389C14.1658 12.282 13.9794 12.9438 14.0847 13.4176L14.66 15.9256C15.1138 17.9108 14.0685 18.6787 12.3265 17.6412L9.90383 16.1952C9.46629 15.9338 8.74516 15.9338 8.29952 16.1952L5.87686 17.6412C4.14292 18.6787 3.08959 17.9026 3.54333 15.9256L4.11861 13.4176C4.22395 12.9438 4.03759 12.282 3.69728 11.9389L1.68785 9.91288C0.50488 8.72013 0.8857 7.51105 2.53862 7.23328L5.12333 6.8003C5.55276 6.72678 6.07132 6.34281 6.26579 5.9425L7.69183 3.06684C8.46968 1.50647 9.73367 1.50647 10.5034 3.06684Z M29.9517 3.06684L31.3777 5.9425C31.5722 6.34281 32.0907 6.72678 32.5283 6.8003L35.113 7.23328C36.7659 7.51105 37.1548 8.72013 35.9637 9.91288L33.9543 11.9389C33.614 12.282 33.4276 12.9438 33.533 13.4176L34.1083 15.9256C34.562 17.9108 33.5168 18.6787 31.7747 17.6412L29.3521 16.1952C28.9145 15.9338 28.1934 15.9338 27.7478 16.1952L25.3251 17.6412C23.5912 18.6787 22.5378 17.9026 22.9916 15.9256L23.5669 13.4176C23.6722 12.9438 23.4858 12.282 23.1455 11.9389L21.1361 9.91288C19.9531 8.72013 20.3339 7.51105 21.9869 7.23328L24.5716 6.8003C25.001 6.72678 25.5196 6.34281 25.714 5.9425L27.1401 3.06684C27.9179 1.50647 29.1819 1.50647 29.9517 3.06684Z M49.3999 3.06684L50.8259 5.9425C51.0204 6.34281 51.539 6.72678 51.9765 6.8003L54.5612 7.23328C56.2141 7.51105 56.6031 8.72013 55.412 9.91288L53.4026 11.9389C53.0622 12.282 52.8759 12.9438 52.9812 13.4176L53.5565 15.9256C54.0102 17.9108 52.965 18.6787 51.223 17.6412L48.8003 16.1952C48.3628 15.9338 47.6416 15.9338 47.196 16.1952L44.7734 17.6412C43.0394 18.6787 41.9861 17.9026 42.4398 15.9256L43.0151 13.4176C43.1204 12.9438 42.9341 12.282 42.5938 11.9389L40.5843 9.91288C39.4014 8.72013 39.7822 7.51105 41.4351 7.23328L44.0198 6.8003C44.4492 6.72678 44.9678 6.34281 45.1623 5.9425L46.5883 3.06684C47.3662 1.50647 48.6302 1.50647 49.3999 3.06684Z M68.8481 3.06684L70.2742 5.9425C70.4686 6.34281 70.9872 6.72678 71.4248 6.8003L74.0095 7.23328C75.6624 7.51105 76.0513 8.72013 74.8602 9.91288L72.8508 11.9389C72.5105 12.282 72.3241 12.9438 72.4295 13.4176L73.0047 15.9256C73.4585 17.9108 72.4133 18.6787 70.6712 17.6412L68.2486 16.1952C67.811 15.9338 67.0899 15.9338 66.6443 16.1952L64.2216 17.6412C62.4876 18.6787 61.4343 17.9026 61.8881 15.9256L62.4633 13.4176C62.5687 12.9438 62.3823 12.282 62.042 11.9389L60.0326 9.91288C58.8496 8.72013 59.2304 7.51105 60.8833 7.23328L63.4681 6.8003C63.8975 6.72678 64.4161 6.34281 64.6105 5.9425L66.0366 3.06684C66.8144 1.50647 68.0784 1.50647 68.8481 3.06684Z M88.2964 3.06684L89.7224 5.9425C89.9169 6.34281 90.4355 6.72678 90.873 6.8003L93.4577 7.23328C95.1106 7.51105 95.4995 8.72013 94.3085 9.91288L92.299 11.9389C91.9587 12.282 91.7724 12.9438 91.8777 13.4176L92.453 15.9256C92.9067 17.9108 91.8615 18.6787 90.1195 17.6412L87.6968 16.1952C87.2593 15.9338 86.5381 15.9338 86.0925 16.1952L83.6698 17.6412C81.9359 18.6787 80.8826 17.9026 81.3363 15.9256L81.9116 13.4176C82.0169 12.9438 81.8306 12.282 81.4903 11.9389L79.4808 9.91288C78.2979 8.72013 78.6787 7.51105 80.3316 7.23328L82.9163 6.8003C83.3457 6.72678 83.8643 6.34281 84.0588 5.9425L85.4848 3.06684C86.2626 1.50647 87.5266 1.50647 88.2964 3.06684Z" fill="url(#paint0_linear_84_5104)"></path>
-                                    <defs>
-                                        <linearGradient id="paint0_linear_84_5104" x1="1" y1="9.99999" x2="94.9998" y2="9.99999" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#CB9C44"></stop>
-                                            <stop offset="1" stop-color="#FAD371"></stop>
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                                <span class="font-light text-white">Uma empresa da Infinity Home</span>
-                            </div>
-                            <div class="flex flex-col gap-3 mt-4">
-                                <h1 class="text-center text-4xl font-medium text-white sm:text-6xl">A única corretora Private Global</h1>
-                                <p class="text-center text-lg text-white sm:text-2xl">Conectados ao maior pool de liquidez suíço. Seu capital, no mais alto nível.</p>
-                            </div>
-                        </div>
-                        <a class="inline-flex items-center w-full md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary bg-amber-400 text-black hover:bg-amber-500/90 h-14 rounded-xl px-6 mt-8" href="/cadastro">
-                            Seja um cliente Private <i class="fas fa-external-link-alt shrink-0 origin-center ml-2"></i>
+    <!-- Background Image without Blur -->
+    <div class="background-image"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-10 pb-20 px-6 relative z-10">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <h1 class="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6">
+                        <span class="text-white">Negocie com Facilidade</span><br class="md:hidden">
+                        <span class="text-white">e </span><span class="gradient-text">Segurança</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8">
+                        A plataforma Grivo oferece a melhor experiência em trading de opções binárias com retornos de até 95% e execução em milissegundos.
+                    </p>
+                    <div class="flex justify-center lg:justify-start">
+                        <a class="cta-button rounded-full gradient-bg text-white font-semibold hover:shadow-xl transition glow-hover" href="cadastro">
+                            Comece Agora <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
-                    <div class="border-border relative isolate mx-auto mt-12 min-h-32 w-full max-w-4xl flex-1 rounded-t-3xl border-x-2 border-t-2 border-neutral-700 bg-black">
-                        <span class="border-border absolute top-0 left-1/2 z-10 flex aspect-square size-16 shrink-0 transform -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-3xl border-2 border-neutral-700 bg-black">
-                            <i class="fa-solid fa-shield-halved text-amber-300 text-3xl"></i>
-                        </span>
-                         <img alt="Dashboard Hero" src="/assets/images/hero-dashboard.webp" class="pointer-events-none absolute h-full w-full rounded-t-3xl object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/896x592/000000/FFFFFF?text=Dashboard+Preview';">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="graficos">
-            <div class="relative isolate flex h-18 items-center justify-center bg-zinc-950">
-                <iframe src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=br#{ &quot;symbols&quot;: [ { &quot;proName&quot;: &quot;FOREXCOM:SPXUSD&quot;, &quot;title&quot;: &quot;S&P 500 Index&quot; }, { &quot;proName&quot;: &quot;FOREXCOM:NSXUSD&quot;, &quot;title&quot;: &quot;US 100 Cash CFD&quot; }, { &quot;proName&quot;: &quot;FX_IDC:EURUSD&quot;, &quot;title&quot;: &quot;EUR to USD&quot; }, { &quot;proName&quot;: &quot;BITSTAMP:BTCUSD&quot;, &quot;title&quot;: &quot;Bitcoin&quot; }, { &quot;proName&quot;: &quot;BITSTAMP:ETHUSD&quot;, &quot;title&quot;: &quot;Ethereum&quot; } ], &quot;showSymbolLogo&quot;: true, &quot;isTransparent&quot;: true, &quot;displayMode&quot;: &quot;compact&quot;, &quot;colorTheme&quot;: &quot;dark&quot;, &quot;locale&quot;: &quot;br&quot;, &quot;utm_source&quot;: &quot;localhost&quot;, &quot;utm_medium&quot;: &quot;widget_new&quot;, &quot;utm_campaign&quot;: &quot;ticker-tape&quot;, &quot;page-uri&quot;: &quot;&quot; }" title="Ticker Tape TradingView Widget" style="box-sizing: border-box; display: block; width: 100%; height: 4.5rem; user-select: none;"></iframe>
-            </div>
-        </section>
-
-        <section id="transparencia-maxima">
-            <div class="relative isolate h-full w-full overflow-clip border-b border-neutral-700 bg-neutral-900">
-                <div class="mx-auto grid max-w-7xl grid-cols-1 items-center px-3 sm:grid-cols-2">
-                    <div class="flex w-full flex-col gap-6 px-3 py-12 max-sm:pb-3">
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-2xl font-medium text-white max-sm:text-center sm:text-3xl md:text-4xl">Transparência Máxima:</h2>
-                            <p class="text-lg text-neutral-400 max-sm:text-center sm:text-lg">Utilizamos TradingView conectado diretamente ao mercado real.</p>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2">
-                            <div class="flex flex-col items-center gap-3 p-3 max-sm:border-t max-sm:first:border-none sm:items-start sm:border-r border-neutral-800">
-                                <span class="flex aspect-square size-12 shrink-0 items-center justify-center rounded-lg bg-neutral-800 sm:size-14">
-                                    <i class="fas fa-coins text-neutral-300 text-2xl"></i>
-                                </span>
-                                <h3 class="text-neutral-400 max-sm:text-center sm:text-lg md:text-xl">Cotações reais e precisas</h3>
+                    
+                    <!-- Payment methods section -->
+                    <div class="mt-10 text-center lg:text-left">
+                        <p class="text-white mb-3">Depósitos e saques rápidos via:</p>
+                        <div class="payment-methods justify-center lg:justify-start">
+                            <div class="payment-method">
+                                <i class="fab fa-pix pix-icon"></i>
+                                <span class="text-white">PIX</span>
                             </div>
-                            <div class="flex flex-col items-center gap-3 p-3 max-sm:border-t max-sm:first:border-none sm:items-start border-neutral-800">
-                                <span class="flex aspect-square size-12 shrink-0 items-center justify-center rounded-lg bg-neutral-800 sm:size-14">
-                                     <i class="fas fa-link text-neutral-300 text-2xl"></i>
-                                </span>
-                                <h3 class="text-neutral-400 max-sm:text-center sm:text-lg md:text-xl">Conexão direta com bancos suíços</h3>
+                            <div class="payment-method">
+                                <i class="fab fa-ethereum usdt-icon"></i>
+                                <span class="text-white">USDT</span>
                             </div>
-                            <div class="flex flex-col items-center gap-3 p-3 max-sm:border-t max-sm:first:border-none sm:border-t sm:items-start sm:border-r border-neutral-800">
-                                <span class="flex aspect-square size-12 shrink-0 items-center justify-center rounded-lg bg-neutral-800 sm:size-14">
-                                    <i class="fas fa-chart-line text-neutral-300 text-2xl"></i>
-                                </span>
-                                <h3 class="text-neutral-400 max-sm:text-center sm:text-lg md:text-xl">Gráficos avançados e execução ultrarrápida</h3>
-                            </div>
-                            <div class="flex flex-col items-center gap-3 p-3 max-sm:border-t max-sm:first:border-none sm:border-t sm:items-start border-neutral-800">
-                                <span class="flex aspect-square size-12 shrink-0 items-center justify-center rounded-lg bg-neutral-800 sm:size-14">
-                                     <i class="fas fa-tachometer-alt text-neutral-300 text-2xl"></i>
-                                </span>
-                                <h3 class="text-neutral-400 max-sm:text-center sm:text-lg md:text-xl">Indicadores e Marcadores Profissionais.</h3>
+                            <div class="payment-method">
+                                <i class="fas fa-credit-card card-icon"></i>
+                                <span class="text-white">Cartão</span>
                             </div>
                         </div>
                     </div>
-                    <div class="relative h-full min-h-[28rem] w-full sm:min-h-[42rem]">
-                        <span class="animate-up-down-rotate absolute top-36 left-1 z-10 flex w-fit flex-col rounded-xl bg-gradient-to-r from-[#CB9C44] to-[#FAD371] px-4 py-2 font-semibold shadow-xl shadow-black/20 max-sm:text-sm md:right-0">Graphic By:<svg width="204" height="36" class="h-7 w-auto md:h-8" viewBox="0 0 204 36" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"><path d="M164.453 9.26998C164.453 10.5428 163.381 11.5585 162.038 11.5585C160.747 11.5585 159.662 10.53 159.662 9.26998C159.662 8.00998 160.76 6.99426 162.038 6.99426C163.381 6.99426 164.453 8.02283 164.453 9.26998ZM163.975 27H160.101V12.8571H163.975V27ZM105.28 11.5971C106.622 11.5971 107.694 10.5685 107.694 9.32141C107.694 8.04855 106.622 7.03283 105.28 7.03283C103.988 7.03283 102.904 8.06141 102.904 9.32141C102.904 10.5814 104.001 11.5971 105.28 11.5971ZM103.291 27H107.165V12.8571H103.291V27ZM55.5191 27H51.6457V11.5714H46.4811V7.71426H60.6836V11.5714H55.5191V27ZM64.5571 27L60.6836 27.0257V12.8571H64.5571V15.2743C65.0219 13.9885 66.2872 13.0243 67.8236 13.0243H67.8624C68.2497 13.0243 68.6371 13.0243 69.076 13.1528V16.8043C68.5305 16.6255 67.9589 16.5386 67.3846 16.5471C65.6029 16.5471 64.5571 17.8328 64.5571 20.0185V27ZM113.62 27H109.747V12.87L113.62 12.8571V14.1428C114.356 13.0885 115.596 12.5871 117.365 12.5871C120.683 12.5871 122.658 14.9014 122.658 18.3085V27H118.785V19.2857C118.785 17.3957 118.062 15.8657 116.5 15.8657C114.744 15.8657 113.62 17.0614 113.62 19.5814V27ZM151.063 27L158.81 7.71426H154.291L149.127 21.2143L143.317 7.71426H138.798L147.19 27H151.063ZM198.125 27H194.342L191.734 18.9643L189.152 27H185.369L180.76 12.8571H184.814L187.461 21.9085L190.262 12.8571H193.18L196.021 21.9085L198.629 12.8571H202.709L198.125 27ZM76.074 27.3085C78.0365 27.3085 79.3922 26.3185 80.0507 25.4185V27H83.9241V12.8571H80.0507V14.4385C79.5831 13.835 78.9796 13.3495 78.2888 13.0212C77.5979 12.6929 76.8393 12.531 76.074 12.5485C72.291 12.5485 69.3988 15.9428 69.3988 19.9285C69.3988 23.9143 72.291 27.3085 76.074 27.3085ZM76.9003 23.7728C74.7312 23.7728 73.311 22.1657 73.311 19.9285C73.311 17.6914 74.7312 16.0714 76.9003 16.0714C79.0565 16.0714 80.4768 17.6914 80.4768 19.9285C80.4768 22.1657 79.0565 23.7857 76.9003 23.7857V23.7728ZM96.8355 25.4185C96.19 26.3185 94.8214 27.3085 92.8588 27.3085C89.0758 27.3085 86.1836 23.9143 86.1836 19.9285C86.1836 15.9428 89.0758 12.5485 92.8588 12.5485C94.8214 12.5485 96.1771 13.5385 96.8355 14.4385V7.71426H100.709V27H96.8355V25.4185ZM90.0958 19.9285C90.0958 22.1657 91.516 23.7857 93.6852 23.7857C95.8414 23.7857 97.2616 22.1657 97.2616 19.9285C97.2616 17.6914 95.8414 16.0714 93.6852 16.0714C91.516 16.0714 90.0958 17.6914 90.0958 19.9285ZM131.993 33.1971C136.331 33.1971 139.443 30.9857 139.443 25.8943V12.8571H135.57V14.4385C135.118 13.8242 134.521 13.3304 133.832 13.0007C133.143 12.671 132.383 12.5157 131.619 12.5485C127.9 12.5485 124.905 15.7114 124.905 19.6971C124.905 23.6571 127.9 27 131.619 27C132.391 26.9951 133.152 26.8085 133.839 26.4555C134.525 26.1025 135.118 25.593 135.57 24.9685V25.92C135.57 28.1828 134.227 29.8028 131.929 29.8028C130.277 29.8217 128.684 29.1884 127.5 28.0414L125.37 30.9343C126.984 32.4771 129.514 33.1971 131.993 33.1971ZM132.445 23.3228C131.966 23.3317 131.49 23.2437 131.045 23.0643C130.601 22.8849 130.198 22.6177 129.86 22.2789C129.522 21.9401 129.257 21.5367 129.08 21.093C128.903 20.6492 128.818 20.1744 128.83 19.6971C128.83 17.5243 130.483 16.0843 132.445 16.0843C134.408 16.0843 136.06 17.5243 136.06 19.6971C136.073 20.1744 135.988 20.6492 135.811 21.093C135.634 21.5367 135.368 21.9401 135.03 22.2789C134.693 22.6177 134.289 22.8849 133.845 23.0643C133.401 23.2437 132.925 23.3317 132.445 23.3228ZM180.476 24.0685C179.729 25.1005 178.736 25.9311 177.586 26.4855C176.437 27.04 175.167 27.3007 173.891 27.2443C169.656 27.2443 166.363 24.3257 166.363 19.8643C166.34 18.8838 166.518 17.909 166.885 16.999C167.252 16.0891 167.802 15.2632 168.5 14.5715C169.198 13.8799 170.031 13.337 170.946 12.9759C171.862 12.6149 172.842 12.4432 173.826 12.4714C177.558 12.4714 180.824 14.8243 180.824 19.44C180.853 19.9248 180.836 20.4112 180.772 20.8928H170.134C170.366 22.7828 172.044 23.7085 173.917 23.7085C175.711 23.7085 176.925 22.9114 177.583 21.9214L180.476 24.0685ZM173.723 15.6728C172.264 15.6728 170.65 16.4057 170.276 18.1285H176.925C176.589 16.4314 175.169 15.6728 173.723 15.6728ZM15.4938 7.71426H9.15527e-05V15.4285H7.74693V27H15.4938V7.71426ZM30.9874 27H21.9495L29.6963 7.71426H38.7343L30.9874 27ZM21.9495 15.4285C22.9768 15.4285 23.962 15.0222 24.6884 14.2988C25.4148 13.5755 25.8229 12.5944 25.8229 11.5714C25.8229 10.5484 25.4148 9.56735 24.6884 8.84399C23.962 8.12064 22.9768 7.71426 21.9495 7.71426C20.9222 7.71426 19.9369 8.12064 19.2105 8.84399C18.4841 9.56735 18.076 10.5484 18.076 11.5714C18.076 12.5944 18.4841 13.5755 19.2105 14.2988C19.9369 15.0222 20.9222 15.4285 21.9495 15.4285Z"></path></svg></span>
-                        <img alt="Background Transparência" src="/assets/images/bg-transparencia-maxima.webp" class="absolute top-12 left-12 h-full min-w-[200%] rounded-tl-2xl object-cover object-left" onerror="this.style.display='none'">
-                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="book-a-b">
-            <div class="w-full overflow-clip bg-neutral-800">
-                <div class="mx-auto flex max-w-7xl flex-col gap-6 px-3 pt-12 pb-36 sm:gap-12">
-                    <div class="mb-6 flex flex-col gap-2">
-                        <h2 class="text-center text-2xl font-medium text-white max-sm:text-center sm:text-3xl md:text-4xl">Execução Híbrida</h2>
-                        <p class="text-center text-neutral-400 sm:text-lg">Nosso sistema conecta traders ao mercado real com liquidez institucional, garantindo um fluxo estruturado e transparente:</p>
-                    </div>
-                    <div class="flex flex-col items-stretch justify-between gap-6 md:flex-row md:gap-6">
-                        <div class="relative flex w-full flex-col md:w-1/3">
-                            <div class="flex h-full flex-col rounded-2xl border border-neutral-700 bg-neutral-900/50 p-6">
-                                <div class="absolute -top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                                    <span class="rounded-full border border-neutral-600 bg-neutral-700 px-3 py-1 text-sm font-medium text-neutral-300">Etapa 1</span>
-                                </div>
-                                <h3 class="mt-2 mb-6 text-center text-lg font-medium text-neutral-300">Negociação Primária</h3>
-                                <div class="mb-6 flex flex-1 items-center justify-center">
-                                    <div class="w-full rounded-lg p-5">
-                                        <div class="grid grid-cols-3 gap-4">
-                                            <div class="flex flex-col items-center">
-                                                <div class="bg-amber-400 rounded-2xl p-3"><i class="fas fa-users h-6 w-6 text-black"></i></div>
+                
+                <div class="lg:w-1/2 relative">
+                    <!-- Modern Card with 3D Effect -->
+                    <div class="modern-card">
+                        <div class="modern-card-inner">
+                            <div class="card-gradient rounded-2xl p-1 shadow-2xl overflow-hidden">
+                                <div class="bg-gray-900 rounded-xl relative">
+                                    <div class="platform-bg"></div>
+                                    <div class="p-8 relative z-10">
+                                        <div class="flex justify-between items-center mb-8">
+                                            <div>
+                                                <h3 class="text-2xl font-bold gradient-text">Plataforma Grivo</h3>
+                                                <p class="text-gray-400">Tecnologia de ponta para traders</p>
                                             </div>
-                                            <div class="flex flex-col items-center">
-                                                <div class="bg-amber-400 rounded-2xl p-3"><i class="fas fa-users h-6 w-6 text-black"></i></div>
-                                            </div>
-                                            <div class="flex flex-col items-center">
-                                                <div class="bg-amber-400 rounded-2xl p-3"><i class="fas fa-users h-6 w-6 text-black"></i></div>
+                                            <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+                                                <i class="fas fa-rocket text-2xl text-white"></i>
                                             </div>
                                         </div>
-                                        <div class="mt-3 text-center"><span class="text-neutral-300">Traders</span></div>
-                                    </div>
-                                </div>
-                                <p class="text-center text-sm text-neutral-200">Traders operam entre si, via corretora.</p>
-                            </div>
-                        </div>
-                        <div class="hidden w-12 items-center justify-center md:flex">
-                            <i class="fas fa-arrow-right h-6 w-6 text-neutral-400"></i>
-                        </div>
-                        <div class="my-2 flex justify-center md:hidden">
-                            <div class="rotate-90"><i class="fas fa-arrow-right h-6 w-6 text-neutral-400"></i></div>
-                        </div>
-                        <div class="relative flex w-full flex-col md:w-1/3">
-                            <div class="flex h-full flex-col rounded-2xl border border-neutral-700 bg-neutral-900/50 p-6">
-                                <div class="absolute -top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                                    <span class="rounded-full border border-neutral-600 bg-neutral-700 px-3 py-1 text-sm font-medium text-neutral-300">Etapa 2</span>
-                                </div>
-                                <h3 class="mt-2 mb-6 text-center text-lg font-medium text-neutral-300">Negociação Secundária</h3>
-                                <div class="flex h-full flex-1 items-center justify-center">
-                                    <div class="w-full rounded-lg p-5">
-                                        <div class="flex flex-col items-center">
-                                            <div class="bg-amber-400 relative rounded-2xl p-3">
-                                                <span class="absolute -top-1 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg border border-neutral-700 bg-neutral-800 p-1">
-                                                    <i class="fa-solid fa-shield-halved text-amber-300 text-base"></i>
-                                                </span>
-                                                <i class="fas fa-building h-10 w-10 text-black"></i>
+                                        
+                                        <div class="grid grid-cols-3 gap-4 mb-8">
+                                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                                <div class="text-2xl font-bold gradient-text">95%</div>
+                                                <div class="text-xs text-gray-400">Payout máximo</div>
                                             </div>
-                                            <div class="mt-3 text-center"><span class="text-neutral-300">Corretora</span></div>
+                                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                                <div class="text-2xl font-bold gradient-text">0.1s</div>
+                                                <div class="text-xs text-gray-400">Execução</div>
+                                            </div>
+                                            <div class="bg-gray-800/50 rounded-lg p-4 text-center">
+                                                <div class="text-2xl font-bold gradient-text">200+</div>
+                                                <div class="text-xs text-gray-400">Ativos</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="relative h-40 rounded-lg overflow-hidden">
+                                            <!-- Updated platform content with stats grid -->
+                                            <div class="platform-card-content h-full flex flex-col items-center justify-center">
+                                                <div class="stats-grid w-full">
+                                                    <div class="stat-item">
+                                                        <div class="stat-value">2.5M+</div>
+                                                        <div class="stat-label">Usuários Ativos</div>
+                                                    </div>
+                                                    <div class="stat-item">
+                                                        <div class="stat-value">24/7</div>
+                                                        <div class="stat-label">Suporte ao Cliente</div>
+                                                    </div>
+                                                    <div class="stat-item">
+                                                        <div class="stat-value">100+</div>
+                                                        <div class="stat-label">Indicadores</div>
+                                                    </div>
+                                                    <div class="stat-item">
+                                                        <div class="stat-value">99.9%</div>
+                                                        <div class="stat-label">Precisão</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-center text-sm text-neutral-200">Corretora intermedia ordens entre clientes e bancos (provedores de liquidez).</p>
-                            </div>
-                        </div>
-                        <div class="hidden w-12 items-center justify-center md:flex">
-                            <i class="fas fa-arrow-right h-6 w-6 text-neutral-400"></i>
-                        </div>
-                        <div class="my-2 flex justify-center md:hidden">
-                            <div class="rotate-90"><i class="fas fa-arrow-right h-6 w-6 text-neutral-400"></i></div>
-                        </div>
-                        <div class="relative flex w-full flex-col md:w-1/3">
-                            <div class="flex h-full flex-col rounded-2xl border border-neutral-700 bg-neutral-900/50 p-6">
-                                <div class="absolute -top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                                    <span class="rounded-full border border-neutral-600 bg-neutral-700 px-3 py-1 text-sm font-medium text-neutral-300">Etapa 3</span>
-                                </div>
-                                <h3 class="mt-2 mb-6 text-center text-lg font-medium text-neutral-300">Provedores de Liquidez</h3>
-                                <div class="flex flex-1 items-center justify-center">
-                                    <div class="w-full rounded-lg p-5">
-                                        <div class="grid grid-cols-3 gap-3">
-                                            <div class="flex flex-col items-center"><div class="bg-amber-400 w-10 h-10 flex items-center justify-center rounded-md"><i class="fas fa-university text-black"></i></div></div>
-                                            <div class="flex flex-col items-center"><div class="bg-amber-400 w-10 h-10 flex items-center justify-center rounded-md"><i class="fas fa-university text-black"></i></div></div>
-                                            <div class="flex flex-col items-center"><div class="bg-amber-400 w-10 h-10 flex items-center justify-center rounded-md"><i class="fas fa-university text-black"></i></div></div>
-                                            <div class="flex flex-col items-center"><div class="bg-amber-400 w-10 h-10 flex items-center justify-center rounded-md"><i class="fas fa-university text-black"></i></div></div>
-                                            <div class="flex flex-col items-center"><div class="bg-amber-400 w-10 h-10 flex items-center justify-center rounded-md"><i class="fas fa-university text-black"></i></div></div>
-                                            <div class="flex flex-col items-center"><div class="bg-amber-400 w-10 h-10 flex items-center justify-center rounded-md"><i class="fas fa-university text-black"></i></div></div>
-                                        </div>
-                                        <div class="mt-3 text-center"><span class="text-neutral-300">Bancos Globais</span></div>
-                                    </div>
-                                </div>
-                                <p class="text-center text-sm text-neutral-200">Bancos negociam entre si, fornecendo liquidez à corretora, equilibrando ordens para otimizar a execução.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-0 flex items-center justify-center rounded-xl border border-neutral-700 bg-neutral-700/25 p-3 md:mt-12">
-                        <p class="text-center font-medium text-neutral-300 sm:text-lg">Esse fluxo garante alta liquidez contínua, execução eficiente e solidez financeira para saques imediatos dos clientes.</p>
-                    </div>
-                    <div class="h-px w-full bg-neutral-700"></div> </div>
-            </div>
-        </section>
-
-        <section id="diferenciais">
-            <div class="relative w-full overflow-x-clip bg-neutral-100">
-                <div class="mx-auto flex max-w-7xl -translate-y-8 flex-col gap-6 px-3">
-                    <div class="absolute -top-10 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-2">
-                        <h2 class="text-center text-2xl font-medium text-nowrap text-white max-sm:text-center sm:text-3xl md:text-4xl">Diferenciais Infinity Home:</h2>
-                    </div>
-                    <div class="grid w-full grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
-                        <div class="flex w-full flex-col overflow-clip rounded-xl border border-neutral-300 bg-white text-black">
-                            <img alt="Payout acima de 90%" loading="lazy" src="/assets/images/diferenciais-01.webp" class="h-56 max-h-56 w-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/000000?text=Payout+90%25';">
-                            <div class="flex flex-col gap-2 px-4 py-6">
-                                <h3 class="text-lg font-medium sm:text-xl"> Payout acima de 90%</h3>
-                                <p class="text-neutral-700">Máximo retorno com um dos melhores payouts do mercado.</p>
-                            </div>
-                        </div>
-                        <div class="flex w-full flex-col overflow-clip rounded-xl border border-neutral-300 bg-white text-black">
-                            <img alt="Saque imediato" loading="lazy" src="/assets/images/diferenciais-02.webp" class="h-56 max-h-56 w-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/000000?text=Saque+Imediato';">
-                            <div class="flex flex-col gap-2 px-4 py-6">
-                                <h3 class="text-lg font-medium sm:text-xl"> Saque imediato</h3>
-                                <p class="text-neutral-700">Retire seu saldo de forma rápida e sem burocracia.</p>
-                            </div>
-                        </div>
-                        <div class="flex w-full flex-col overflow-clip rounded-xl border border-neutral-300 bg-white text-black">
-                            <img alt="Suporte humanizado" loading="lazy" src="/assets/images/diferenciais-03.webp" class="h-56 max-h-56 w-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/000000?text=Suporte';">
-                            <div class="flex flex-col gap-2 px-4 py-6">
-                                <h3 class="text-lg font-medium sm:text-xl"> Suporte humanizado</h3>
-                                <p class="text-neutral-700">Atendimento ágil e eficiente, sempre disponível.</p>
-                            </div>
-                        </div>
-                        <div class="flex w-full flex-col overflow-clip rounded-xl border border-neutral-300 bg-white text-black">
-                            <img alt="Mercado real" loading="lazy" src="/assets/images/diferenciais-04.webp" class="h-56 max-h-56 w-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/000000?text=Mercado+Real';">
-                            <div class="flex flex-col gap-2 px-4 py-6">
-                                <h3 class="text-lg font-medium sm:text-xl"> Mercado real</h3>
-                                <p class="text-neutral-700">TradingView e fluxo institucional.</p>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-blue-500/10 blur-3xl -z-10"></div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-purple-500/10 blur-3xl -z-10"></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="cta">
-            <div class="overflouw clip relative isolate w-full max-w-screen bg-gradient-to-r from-black to-neutral-900" style=" height: 400px; display: flex; justify-content: center; ">
-                 <img alt="CTA Background" loading="lazy" src="/assets/images/cta-bg.webp" class="absolute inset-0 -z-10 h-full w-full object-cover" onerror="this.style.display='none'">
-                <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-6 px-3 py-18 sm:gap-12 md:flex-row md:gap-24">
-                    <div class="flex w-full flex-col gap-6">
-                        <h2 class="flex flex-col gap-1 text-2xl font-light text-white max-sm:text-center sm:text-3xl md:text-4xl">Infinity Home <span class="text-3xl font-medium max-sm:text-center sm:text-4xl md:text-5xl">A corretora private para traders exigentes!</span></h2>
-                        <p class="text-neutral-300 max-sm:text-center sm:text-lg md:text-xl">Acesso exclusivo, liquidez institucional e zero taxas.</p>
-                    </div>
-                    <a class="inline-flex items-center w-full md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary bg-amber-400 text-black hover:bg-amber-500/90 h-14 rounded-xl px-6" href="/cadastro">
-                        Cadastre-se agora mesmo <i class="fas fa-external-link-alt shrink-0 origin-center ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="beneficios">
-            <div class="relative w-full overflow-x-clip bg-neutral-100 text-black">
-                <div class="container mx-auto flex flex-col gap-6 px-3 py-12">
-                    <div class="flex flex-col gap-2">
-                        <h2 class="text-center text-2xl font-medium max-sm:text-center sm:text-3xl md:text-4xl">Benefícios exclusivos</h2>
-                    </div>
-                    <div id="beneficios-carousel" class="relative carousel-container">
-                        <div class="carousel-track -ml-3">
-                            <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                                <div class="flex h-full w-full flex-col items-center justify-center overflow-clip rounded-xl border border-neutral-300 bg-neutral-50">
-                                    <img alt="Invista a qualquer hora" loading="lazy" src="/assets/images/beneficio-01.webp" class="h-72 w-full shrink-0 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/000000?text=Benefício+1';">
-                                    <div class="flex flex-1 flex-col gap-2 px-3 py-6">
-                                        <h3 class="text-xl font-medium sm:text-2xl">Invista a qualquer hora</h3>
-                                        <p class="text-neutral-700 md:text-lg">Operações disponíveis 24h por dia para você aproveitar as oportunidades do mercado.</p>
-                                    </div>
-                                </div>
+    <!-- Copy Trade Highlight Section -->
+    <section class="py-16 px-6 relative z-10 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="copy-trade-card rounded-2xl overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2 p-10">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-white"></i>
                             </div>
-                            <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                                <div class="flex h-full w-full flex-col items-center justify-center overflow-clip rounded-xl border border-neutral-300 bg-neutral-50">
-                                    <img alt="Teste estratégias sem risco" loading="lazy" src="/assets/images/beneficio-02.webp" class="h-72 w-full shrink-0 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/000000?text=Benefício+2';">
-                                    <div class="flex flex-1 flex-col gap-2 px-3 py-6">
-                                        <h3 class="text-xl font-medium sm:text-2xl">Teste estratégias sem risco</h3>
-                                        <p class="text-neutral-700 md:text-lg">Acesse com sua conta demo sem restrições para praticar e aprimorar suas habilidades.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                                <div class="flex h-full w-full flex-col items-center justify-center overflow-clip rounded-xl border border-neutral-300 bg-neutral-50">
-                                    <img alt="150+ ativos globais" loading="lazy" src="/assets/images/beneficio-03.webp" class="h-72 w-full shrink-0 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/000000?text=Benefício+3';">
-                                    <div class="flex flex-1 flex-col gap-2 px-3 py-6">
-                                        <h3 class="text-xl font-medium sm:text-2xl">150+ ativos globais</h3>
-                                        <p class="text-neutral-700 md:text-lg">Invista em uma ampla variedade de ativos globais e expanda seu portfólio.</p>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                                <div class="flex h-full w-full flex-col items-center justify-center overflow-clip rounded-xl border border-neutral-300 bg-neutral-50">
-                                    <img alt="Comece com apenas R$60" loading="lazy" src="/assets/images/beneficio-04.webp" class="h-72 w-full shrink-0 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/000000?text=Benefício+4';">
-                                    <div class="flex flex-1 flex-col gap-2 px-3 py-6">
-                                        <h3 class="text-xl font-medium sm:text-2xl">Comece com apenas R$60</h3>
-                                        <p class="text-neutral-700 md:text-lg">Acessibilidade garantida: comece a operar com um valor inicial baixo.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                                <div class="flex h-full w-full flex-col items-center justify-center overflow-clip rounded-xl border border-neutral-300 bg-neutral-50">
-                                    <img alt="Operações a partir de R$5" loading="lazy" src="/assets/images/beneficio-05.webp" class="h-72 w-full shrink-0 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/cccccc/000000?text=Benefício+5';">
-                                    <div class="flex flex-1 flex-col gap-2 px-3 py-6">
-                                        <h3 class="text-xl font-medium sm:text-2xl">Operações a partir de R$5</h3>
-                                        <p class="text-neutral-700 md:text-lg">Baixo custo de entrada para você começar a operar sem grandes investimentos.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <h2 class="text-2xl font-bold">Copy Trade Grivo</h2>
                         </div>
-                        <div class="mt-6 flex items-center gap-6">
-                            <button data-carousel-control="beneficios-carousel" data-slide="prev" class="inline-flex items-center md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap rounded-lg font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary hover:bg-neutral-200 hover:text-black aspect-square shrink-0 size-14 px-0 py-0">
-                                <i class="fas fa-chevron-left sm:text-xl md:text-2xl"></i>
-                                <span class="sr-only">Anterior</span>
-                            </button>
-                            <button data-carousel-control="beneficios-carousel" data-slide="next" class="inline-flex items-center md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap rounded-lg font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary hover:bg-neutral-200 hover:text-black aspect-square shrink-0 size-14 px-0 py-0">
-                                <i class="fas fa-chevron-right sm:text-xl md:text-2xl"></i>
-                                <span class="sr-only">Próximo</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre-nos">
-            <div class="relative w-full overflow-x-clip bg-neutral-50 text-black">
-                <div class="mx-auto flex max-w-7xl gap-6 border-t border-neutral-300 px-3 py-12 max-md:flex-col md:gap-12">
-                    <h2 class="text-2xl font-medium max-sm:text-center sm:text-3xl sm:text-nowrap md:text-4xl">A Infinity Home</h2>
-                    <div class="flex flex-col gap-12 max-sm:items-center max-sm:justify-center">
-                        <p class="h-full w-full text-lg text-neutral-700 max-sm:text-center sm:text-lg md:text-xl">
-                            <b class="font-semibold text-black">Infinity Home é parte integrante do Private Equity do Infinity Home,</b> um conglomerado europeu líder no setor financeiro, composto por instituições bancárias e de investimentos com foco em alta performance, segurança e tradição suíça em gestão patrimonial.
+                        <p class="text-gray-300 mb-6">
+                            Copie automaticamente as operações dos traders mais bem-sucedidos da plataforma Grivo. 
+                            Nossa tecnologia de copy trading permite que você replique as estratégias dos melhores 
+                            investidores em tempo real.
                         </p>
-                        <a class="text-amber-600 hover:text-amber-700 inline-flex items-center gap-1 font-semibold transition-colors duration-300 sm:text-lg md:text-xl" href="#">
-                            Saiba mais sobre nós <i class="fas fa-external-link-alt shrink-0 origin-center ml-1"></i>
-                        </a>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Copie os melhores traders automaticamente</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Diversifique seu portfólio com múltiplas estratégias</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Controle total sobre seu capital riscos</span>
+                            </div>
+                        </div>
+                        <button class="px-6 py-3 rounded-full gradient-bg text-white font-medium hover:shadow-lg transition btn-pulse">
+                            <i class="fas fa-copy mr-2"></i> Experimente o Copy Trade
+                        </button>
+                    </div>
+                    <div class="lg:w-1/2 copy-trade-image flex items-center justify-center p-10">
+                        <!-- Removed text overlay -->
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="como-comecar">
-            <div class="relative w-full overflow-x-clip bg-neutral-100 text-black">
-                <div class="mx-auto flex max-w-7xl flex-col gap-6 px-3 py-12">
-                    <div class="flex flex-col gap-2">
-                        <h2 class="text-center text-2xl font-medium max-sm:text-center sm:text-3xl md:text-4xl">Como começar</h2>
+    <!-- Market Ticker -->
+    <section class="py-4 bg-gray-900/50 border-y border-gray-800 overflow-hidden relative z-10">
+        <div class="relative">
+            <div class="flex ticker space-x-12">
+                <!-- Duplicate content for seamless looping -->
+                <div class="flex space-x-12 whitespace-nowrap">
+                    <div class="flex items-center">
+                        <span class="text-green-400 font-medium">BTC/USD</span>
+                        <span class="ml-2 text-gray-300">$42,876.12</span>
+                        <span class="ml-2 text-green-400 text-sm">+2.34%</span>
                     </div>
-                    <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 mt-6">
-                        <div class="flex flex-col items-center justify-start gap-4 text-center">
-                            <i class="fas fa-user-plus text-amber-600 text-4xl sm:text-5xl"></i>
-                            <div class="flex flex-col gap-1">
-                                <h3 class="text-lg font-medium sm:text-xl">Crie sua conta</h3>
-                                <p class="text-neutral-700 sm:text-lg">Cadastre-se e tenha acesso imediato à plataforma.</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center justify-start gap-4 text-center">
-                             <i class="fas fa-shield-alt text-amber-600 text-4xl sm:text-5xl"></i>
-                            <div class="flex flex-col gap-1">
-                                <h3 class="text-lg font-medium sm:text-xl">Teste sem riscos</h3>
-                                <p class="text-neutral-700 sm:text-lg">Experimente com a conta demo e aprimore suas estratégias.</p>
-                            </div>
-                        </div>
-                         <div class="flex flex-col items-center justify-start gap-4 text-center">
-                            <i class="fas fa-download text-amber-600 text-4xl sm:text-5xl"></i>
-                            <div class="flex flex-col gap-1">
-                                <h3 class="text-lg font-medium sm:text-xl">Deposite</h3>
-                                <p class="text-neutral-700 sm:text-lg">Deposite com segurança a partir de R$60 e comece a operar.</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center justify-start gap-4 text-center">
-                           <i class="fas fa-chart-pie text-amber-600 text-4xl sm:text-5xl"></i>
-                            <div class="flex flex-col gap-1">
-                                <h3 class="text-lg font-medium sm:text-xl">Lucre</h3>
-                                <p class="text-neutral-700 sm:text-lg">Opere a partir de R$5 e aproveite as oportunidades do mercado.</p>
-                            </div>
-                        </div>
+                    <div class="flex items-center">
+                        <span class="text-red-400 font-medium">ETH/USD</span>
+                        <span class="ml-2 text-gray-300">$2,341.56</span>
+                        <span class="ml-2 text-red-400 text-sm">-1.12%</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-400 font-medium">GOLD</span>
+                        <span class="ml-2 text-gray-300">$1,987.34</span>
+                        <span class="ml-2 text-green-400 text-sm">+0.87%</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-red-400 font-medium">OIL</span>
+                        <span class="ml-2 text-gray-300">$78.45</span>
+                        <span class="ml-2 text-red-400 text-sm">-0.45%</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-400 font-medium">NASDAQ</span>
+                        <span class="ml-2 text-gray-300">14,532.67</span>
+                        <span class="ml-2 text-green-400 text-sm">+1.23%</span>
+                    </div>
+                </div>
+                <div class="flex space-x-12 whitespace-nowrap">
+                    <div class="flex items-center">
+                        <span class="text-green-400 font-medium">BTC/USD</span>
+                        <span class="ml-2 text-gray-300">$42,876.12</span>
+                        <span class="ml-2 text-green-400 text-sm">+2.34%</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-red-400 font-medium">ETH/USD</span>
+                        <span class="ml-2 text-gray-300">$2,341.56</span>
+                        <span class="ml-2 text-red-400 text-sm">-1.12%</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-400 font-medium">GOLD</span>
+                        <span class="ml-2 text-gray-300">$1,987.34</span>
+                        <span class="ml-2 text-green-400 text-sm">+0.87%</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-red-400 font-medium">OIL</span>
+                        <span class="ml-2 text-gray-300">$78.45</span>
+                        <span class="ml-2 text-red-400 text-sm">-0.45%</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-400 font-medium">NASDAQ</span>
+                        <span class="ml-2 text-gray-300">14,532.67</span>
+                        <span class="ml-2 text-green-400 text-sm">+1.23%</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="nossos-resultados">
-            <div class="relative w-full overflow-x-clip bg-neutral-50 text-black">
-                <div class="mx-auto flex max-w-7xl items-center justify-center gap-12 px-3 py-12 max-md:flex-col">
-                    <div class="flex w-full flex-col gap-6 sm:gap-12">
-                        <h2 class="text-2xl leading-tight font-medium max-sm:text-center sm:text-3xl md:text-5xl">Nossos resultados <br class="max-md:hidden"> falam por si: </h2>
-                        <div class="grid grid-cols-1 gap-6 border-y border-neutral-300 py-6 sm:grid-cols-2 md:py-12">
-                            <h3 class="flex w-full flex-col gap-1 max-sm:items-center max-sm:justify-center max-sm:text-center">
-                                <span class="flex items-center gap-1 text-xl font-medium sm:text-2xl md:text-3xl">+10 anos <i class="fas fa-external-link-alt text-sm"></i></span>
-                                <span class="text-neutral-700 sm:text-lg md:text-xl">com experiência consolidada.</span>
-                            </h3>
-                            <h3 class="flex w-full flex-col gap-1 max-sm:items-center max-sm:justify-center max-sm:text-center">
-                                <span class="flex items-center gap-1 text-xl font-medium sm:text-2xl md:text-3xl">+5 milhões <i class="fas fa-external-link-alt text-sm"></i></span>
-                                <span class="text-neutral-700 sm:text-lg md:text-xl">de traders nos escolheram.</span>
-                            </h3>
-                            <h3 class="flex w-full flex-col gap-1 max-sm:items-center max-sm:justify-center max-sm:text-center">
-                                <span class="flex items-center gap-1 text-xl font-medium sm:text-2xl md:text-3xl">+80 países <i class="fas fa-external-link-alt text-sm"></i></span>
-                                <span class="text-neutral-700 sm:text-lg md:text-xl">com presença global.</span>
-                            </h3>
-                            <h3 class="flex w-full flex-col gap-1 max-sm:items-center max-sm:justify-center max-sm:text-center">
-                                <span class="flex items-center gap-1 text-xl font-medium sm:text-2xl md:text-3xl">+10 milhões <i class="fas fa-external-link-alt text-sm"></i></span>
-                                <span class="text-neutral-700 sm:text-lg md:text-xl">em saques mensais.</span>
-                            </h3>
-                        </div>
-                        <a class="inline-flex items-center w-full md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary bg-amber-400 text-black hover:bg-amber-500/90 h-14 rounded-xl px-6" href="/cadastro">
-                            Se cadastre agora <i class="fas fa-external-link-alt shrink-0 origin-center ml-2"></i>
-                        </a>
-                    </div>
-                    <img alt="Nossos Números" loading="lazy" src="/assets/images/nossos-numeros.webp" class="pointer-events-none h-full w-full rounded-2xl object-cover max-sm:aspect-square md:max-h-[42rem] md:min-h-[42rem]" onerror="this.onerror=null; this.src='https://placehold.co/720x1080/cccccc/000000?text=Resultados';">
-                </div>
-            </div>
-        </section>
-
-        <section id="metodos-de-pagamento">
-            <div class="relative w-full overflow-x-clip bg-neutral-50 text-black">
-                <div class="mx-auto flex max-w-7xl flex-col gap-6 px-3 py-12 md:gap-12">
-                    <div class="flex flex-col gap-2">
-                        <h2 class="text-center text-2xl font-medium max-sm:text-center sm:text-3xl md:text-4xl">Depósitos e retiradas rápidos</h2>
-                        <p class="text-center text-neutral-700 sm:text-lg md:text-xl">Escolha entre vários sistemas de pagamento para retirar e depositar seus fundos de forma rápida e segura.</p>
-                    </div>
-                    <div class="grid grid-cols-2 items-center justify-center gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
-                        <div class="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-                            <i class="fa-brands fa-pix text-4xl text-neutral-800"></i>
-                            <h3 class="sm:text-lg md:text-xl">Pix</h3>
-                        </div>
-                        <div class="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-                            <i class="fas fa-barcode text-4xl text-neutral-800"></i>
-                            <h3 class="sm:text-lg md:text-xl">Boleto</h3>
-                        </div>
-                        <div class="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-                            <svg width="48" height="48" class="shrink-0 origin-center text-neutral-800" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.1293 3.49786L17.9806 4.18918C13.5003 3.03185 8.08002 3.65107 4.83389 7.20786L3.87061 4.47652C5.77915 3.13311 8.19559 2.38878 10.5139 2.12529C13.8147 1.75048 17.0788 2.21489 20.1293 3.49786Z"></path><path d="M13.53 6.35915L10.5315 6.33105L5.28564 21.9997H8.33402L9.84283 17.4648H14.0883L15.5706 21.9997H18.7515L13.53 6.35915ZM10.6402 14.8427L11.9396 10.7599L13.344 14.8427H10.6402Z"></path></svg> <h3 class="sm:text-lg md:text-xl">AstroPay</h3>
-                        </div>
-                        <div class="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-                            <i class="fa-solid fa-dollar-sign text-4xl text-neutral-800"></i> <h3 class="sm:text-lg md:text-xl">Tether</h3>
-                        </div>
-                        <div class="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-                            <i class="fa-brands fa-xing text-4xl text-neutral-800"></i> <h3 class="sm:text-lg md:text-xl">Ripple</h3>
-                        </div>
-                         <div class="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-                            <i class="fa-brands fa-bitcoin text-4xl text-neutral-800"></i>
-                            <h3 class="sm:text-lg md:text-xl">Bitcoin</h3>
-                        </div>
-                        <div class="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-                            <i class="fa-brands fa-ethereum text-4xl text-neutral-800"></i>
-                            <h3 class="sm:text-lg md:text-xl">Ethereum</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="conta-demonstracao">
-            <div class="relative w-full overflow-x-clip bg-neutral-50 text-black">
-                <div class="container mx-auto flex px-3 py-12 sm:px-6 md:px-12">
-                    <div class="w-full overflow-clip rounded-2xl bg-gradient-to-tr from-neutral-900 to-neutral-800">
-                        <div class="relative flex items-stretch justify-center gap-3 max-md:flex-col-reverse sm:gap-6 md:gap-12">
-                            <div class="relative isolate flex h-auto min-h-72 w-full overflow-clip">
-                                <img alt="conta-de-demonstracao" loading="lazy" src="/assets/images/conta-demonstracao.webp" class="absolute top-3 right-3 z-10 aspect-video h-auto max-h-[36rem] w-auto rounded-tr-2xl object-cover object-right-top sm:top-6 md:top-16" onerror="this.onerror=null; this.src='https://placehold.co/800x500/333333/FFFFFF?text=Conta+Demo';">
-                            </div>
-                            <div class="flex w-full flex-col gap-3 px-6 py-6 text-white sm:gap-12 md:px-12 md:py-16">
-                                <div class="flex flex-col gap-1 max-sm:items-center">
-                                    <span>Sem custos</span>
-                                    <h2 class="text-3xl leading-tight font-medium max-sm:text-center sm:text-4xl md:text-5xl">Conta de <br class="max-sm:hidden">demonstração <br class="max-sm:hidden"> <span class="font-semibold">com R$10.000,00</span></h2>
-                                    <p class="mt-1 text-neutral-300 max-sm:text-center sm:mt-3 sm:text-lg md:text-xl">Pratique sem quaisquer riscos, utilizando todos os recursos disponíveis da plataforma.</p>
-                                </div>
-                                <a class="inline-flex items-center w-full md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary bg-amber-400 hover:bg-amber-500/90 h-14 rounded-xl px-6 text-black" href="/cadastro">
-                                    Crie sua conta gratuitamente <i class="fas fa-external-link-alt shrink-0 origin-center ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="depoimentos">
-            <div class="relative w-full overflow-x-clip bg-neutral-100 text-black">
-                <div class="container mx-auto flex flex-col gap-6 px-3 py-12 md:gap-12">
-                    <h2 class="text-center text-2xl font-medium max-sm:text-center sm:text-3xl md:text-4xl">Usuários de classe mundial usam Infinity Home</h2>
-                    <div id="depoimentos-carousel" class="relative carousel-container">
-                         <div class="carousel-track -ml-3">
-                            <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3">
-                                <div class="relative isolate flex h-full w-full flex-col items-center justify-between gap-3 overflow-clip rounded-xl border border-neutral-200 bg-neutral-50 min-h-[20rem]">
-                                    <i class="fas fa-quote-left absolute top-3 left-3 -z-10 text-5xl text-neutral-200"></i>
-                                    <h3 class="h-full flex-1 p-6 pb-4 text-lg font-medium sm:text-lg pt-12">A Infinity Home revolucionou minha forma de operar. A plataforma é extremamente intuitiva e a execução das ordens é simplesmente impecável. Não há delays ou recotações, o que me dá mais confiança para operar no mercado real.</h3>
-                                    <div class="flex w-full items-center gap-2 border-t border-neutral-200 p-6 pt-4">
-                                        <img alt="Carlos Mendes" loading="lazy" src="/assets/images/20.jpg" class="aspect-square size-14 shrink-0 rounded-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/56x56/cccccc/000000?text=CM';">
-                                        <span class="w-full font-semibold text-neutral-700 md:text-lg">Carlos Mendes</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3">
-                                <div class="relative isolate flex h-full w-full flex-col items-center justify-between gap-3 overflow-clip rounded-xl border border-neutral-200 bg-neutral-50 min-h-[20rem]">
-                                     <i class="fas fa-quote-left absolute top-3 left-3 -z-10 text-5xl text-neutral-200"></i>
-                                    <h3 class="h-full flex-1 p-6 pb-4 text-lg font-medium sm:text-lg pt-12">Eu era iniciante no mercado financeiro e encontrei na Infinity Home um suporte que realmente faz a diferença. O atendimento personalizado e os materiais educativos me ajudaram a ganhar experiência e segurança em cada operação.</h3>
-                                    <div class="flex w-full items-center gap-2 border-t border-neutral-200 p-6 pt-4">
-                                        <img alt="Ana Oliveira" loading="lazy" src="/assets/images/2.jpg" class="aspect-square size-14 shrink-0 rounded-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/56x56/cccccc/000000?text=AO';">
-                                        <span class="w-full font-semibold text-neutral-700 md:text-lg">Ana Oliveira</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3">
-                                <div class="relative isolate flex h-full w-full flex-col items-center justify-between gap-3 overflow-clip rounded-xl border border-neutral-200 bg-neutral-50 min-h-[20rem]">
-                                     <i class="fas fa-quote-left absolute top-3 left-3 -z-10 text-5xl text-neutral-200"></i>
-                                    <h3 class="h-full flex-1 p-6 pb-4 text-lg font-medium sm:text-lg pt-12">Como day trader, cada segundo conta. A Infinity Home me surpreendeu com a rapidez na execução das ordens e os spreads ultra competitivos. Isso faz toda a diferença na minha rentabilidade diária!</h3>
-                                    <div class="flex w-full items-center gap-2 border-t border-neutral-200 p-6 pt-4">
-                                        <img alt="Roberto Almeida" loading="lazy" src="/assets/images/3.jpg" class="aspect-square size-14 shrink-0 rounded-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/56x56/cccccc/000000?text=RA';">
-                                        <span class="w-full font-semibold text-neutral-700 md:text-lg">Roberto Almeida</span>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="carousel-item min-w-0 shrink-0 grow-0 pl-3 basis-full sm:basis-1/2 md:basis-1/3">
-                                <div class="relative isolate flex h-full w-full flex-col items-center justify-between gap-3 overflow-clip rounded-xl border border-neutral-200 bg-neutral-50 min-h-[20rem]">
-                                     <i class="fas fa-quote-left absolute top-3 left-3 -z-10 text-5xl text-neutral-200"></i>
-                                    <h3 class="h-full flex-1 p-6 pb-4 text-lg font-medium sm:text-lg pt-12">Operar sem boas ferramentas de análise é praticamente impossível. A Infinity Home oferece gráficos avançados, indicadores precisos e ferramentas profissionais que me ajudam a tomar decisões com mais confiança.</h3>
-                                    <div class="flex w-full items-center gap-2 border-t border-neutral-200 p-6 pt-4">
-                                        <img alt="Juliana Costa" loading="lazy" src="/assets/images/4.jpg" class="aspect-square size-14 shrink-0 rounded-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/56x56/cccccc/000000?text=JC';">
-                                        <span class="w-full font-semibold text-neutral-700 md:text-lg">Juliana Costa</span>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        <div class="mt-6 flex items-center gap-6">
-                             <button data-carousel-control="depoimentos-carousel" data-slide="prev" class="inline-flex items-center md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap rounded-lg font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary hover:bg-neutral-200 hover:text-black aspect-square shrink-0 size-14 px-0 py-0">
-                                <i class="fas fa-chevron-left sm:text-xl md:text-2xl"></i>
-                                <span class="sr-only">Anterior</span>
-                            </button>
-                            <button data-carousel-control="depoimentos-carousel" data-slide="next" class="inline-flex items-center md:w-fit enabled:cursor-pointer justify-center gap-1 whitespace-nowrap rounded-lg font-semibold transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary hover:bg-neutral-200 hover:text-black aspect-square shrink-0 size-14 px-0 py-0">
-                                <i class="fas fa-chevron-right sm:text-xl md:text-2xl"></i>
-                                <span class="sr-only">Próximo</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="duvidas-frequentes">
-            <div class="relative w-full overflow-x-clip bg-neutral-100 text-black">
-                <div class="mx-auto flex max-w-7xl flex-col gap-12 border-t border-neutral-300 px-3 py-12 md:pb-24">
-                    <div class="flex flex-col gap-2">
-                        <h2 class="text-center text-2xl font-medium max-sm:text-center sm:text-3xl md:text-4xl">Ficou com alguma dúvida? <br>Vamos te ajudar </h2>
-                    </div>
-                    <div id="faq-accordion" class="flex min-h-96 flex-col gap-3 rounded-2xl bg-white/75 p-3 sm:px-6">
-                        <div class="accordion-item border-b border-neutral-200 last:border-b-0">
-                            <h3 class="flex">
-                                <button type="button" class="accordion-trigger focus-visible:ring-ring/50 group flex flex-1 items-start justify-between gap-4 rounded-md py-6 text-left text-sm transition-all outline-none focus-visible:border-neutral-300 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 data-[state=open]:text-primary-dark font-medium sm:text-lg md:text-xl w-full">
-                                    Como posso aprender a negociar?
-                                    <i class="accordion-arrow fas fa-chevron-down origin-center pointer-events-none size-6 shrink-0 transition-transform duration-300"></i>
-                                </button>
-                            </h3>
-                            <div class="accordion-content accordion-content-hidden text-sm">
-                                <div class="pt-0 pb-6 text-base sm:text-lg">Na Infinity Home, você pode começar sem risco! Abra sua conta demo gratuita e pratique negociações em um ambiente realista, usando fundos virtuais.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-b border-neutral-200 last:border-b-0">
-                            <h3 class="flex">
-                                <button type="button" class="accordion-trigger focus-visible:ring-ring/50 group flex flex-1 items-start justify-between gap-4 rounded-md py-6 text-left text-sm transition-all outline-none focus-visible:border-neutral-300 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 data-[state=open]:text-primary-dark font-medium sm:text-lg md:text-xl w-full">
-                                    Quanto tempo leva para retirar fundos?
-                                    <i class="accordion-arrow fas fa-chevron-down origin-center pointer-events-none size-6 shrink-0 transition-transform duration-300"></i>
-                                </button>
-                            </h3>
-                            <div class="accordion-content accordion-content-hidden text-sm">
-                                <div class="pt-0 pb-6 text-base sm:text-lg">O tempo de processamento para retiradas pode variar dependendo do método escolhido, mas geralmente processamos solicitações rapidamente, muitas vezes no mesmo dia útil. Consulte nossa página de Políticas de Pagamento para detalhes específicos.</div>
-                            </div>
-                        </div>
-                         <div class="accordion-item border-b border-neutral-200 last:border-b-0">
-                            <h3 class="flex">
-                                <button type="button" class="accordion-trigger focus-visible:ring-ring/50 group flex flex-1 items-start justify-between gap-4 rounded-md py-6 text-left text-sm transition-all outline-none focus-visible:border-neutral-300 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 data-[state=open]:text-primary-dark font-medium sm:text-lg md:text-xl w-full">
-                                    Há alguma taxa de depósito ou retirada?
-                                    <i class="accordion-arrow fas fa-chevron-down origin-center pointer-events-none size-6 shrink-0 transition-transform duration-300"></i>
-                                </button>
-                            </h3>
-                            <div class="accordion-content accordion-content-hidden text-sm">
-                                <div class="pt-0 pb-6 text-base sm:text-lg">A Infinity Home não cobra taxas para depósitos ou retiradas. No entanto, o provedor do sistema de pagamento (banco, carteira eletrônica, etc.) pode aplicar suas próprias taxas.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-b border-neutral-200 last:border-b-0">
-                            <h3 class="flex">
-                                <button type="button" class="accordion-trigger focus-visible:ring-ring/50 group flex flex-1 items-start justify-between gap-4 rounded-md py-6 text-left text-sm transition-all outline-none focus-visible:border-neutral-300 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 data-[state=open]:text-primary-dark font-medium sm:text-lg md:text-xl w-full">
-                                    Qual é o valor mínimo do depósito?
-                                     <i class="accordion-arrow fas fa-chevron-down origin-center pointer-events-none size-6 shrink-0 transition-transform duration-300"></i>
-                                </button>
-                            </h3>
-                            <div class="accordion-content accordion-content-hidden text-sm">
-                                <div class="pt-0 pb-6 text-base sm:text-lg">Você pode começar a operar com um depósito mínimo de apenas R$60, tornando o acesso ao mercado financeiro mais acessível.</div>
-                            </div>
-                        </div>
-                         <div class="accordion-item border-b border-neutral-200 last:border-b-0">
-                            <h3 class="flex">
-                                <button type="button" class="accordion-trigger focus-visible:ring-ring/50 group flex flex-1 items-start justify-between gap-4 rounded-md py-6 text-left text-sm transition-all outline-none focus-visible:border-neutral-300 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 data-[state=open]:text-primary-dark font-medium sm:text-lg md:text-xl w-full">
-                                    Posso negociar usando um telefone/dispositivo móvel?
-                                    <i class="accordion-arrow fas fa-chevron-down origin-center pointer-events-none size-6 shrink-0 transition-transform duration-300"></i>
-                                </button>
-                            </h3>
-                            <div class="accordion-content accordion-content-hidden text-sm">
-                                <div class="pt-0 pb-6 text-base sm:text-lg">Sim! Nossa plataforma é totalmente responsiva e otimizada para dispositivos móveis, permitindo que você negocie de onde estiver, a qualquer hora.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-b border-neutral-200 last:border-b-0">
-                            <h3 class="flex">
-                                <button type="button" class="accordion-trigger focus-visible:ring-ring/50 group flex flex-1 items-start justify-between gap-4 rounded-md py-6 text-left text-sm transition-all outline-none focus-visible:border-neutral-300 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 data-[state=open]:text-primary-dark font-medium sm:text-lg md:text-xl w-full">
-                                    Por que a Infinity Home é considerada a melhor opção?
-                                    <i class="accordion-arrow fas fa-chevron-down origin-center pointer-events-none size-6 shrink-0 transition-transform duration-300"></i>
-                                </button>
-                            </h3>
-                            <div class="accordion-content accordion-content-hidden text-sm">
-                                <div class="pt-0 pb-6 text-base sm:text-lg">Oferecemos uma combinação única de payout elevado (acima de 90%), execução rápida e transparente no mercado real (via TradingView e liquidez institucional), saques imediatos, suporte humanizado e acessibilidade com depósitos e operações de baixo valor.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center justify-center gap-1 rounded-3xl bg-white/75 py-3 text-neutral-800 sm:py-6">
-                        <h2 class="text-center text-lg font-medium sm:text-xl">Ainda com dúvidas? Acesse nossa página completa de dúvidas frequentes:</h2>
-                        <a class="hover:text-amber-700 text-amber-600 flex h-14 w-fit items-center justify-center gap-1 px-6 text-lg font-semibold transition-all duration-300 sm:text-xl" href="/perguntas-frequentes">
-                            Dúvidas frequentes <i class="fas fa-external-link-alt shrink-0 origin-center ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-neutral-900 text-neutral-400">
-        <div class="border-t border-neutral-600">
-            <div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-3 px-3 py-12 lg:pt-24">
-                <div class="mb-3 flex w-full items-center justify-between gap-y-6 max-lg:flex-col">
-                    <div class="flex w-full items-center gap-6 max-lg:flex-col">
-                         <i class="fa-solid fa-shield-halved text-amber-300 text-3xl"></i>
-                        <div class="h-6 w-px bg-neutral-800 max-lg:hidden"></div> <div class="h-px w-full bg-neutral-800 lg:hidden"></div> <div class="flex items-center justify-center gap-x-6 gap-y-3 max-lg:flex-col">
-                        </div>
-                    </div>
-                    <div class="h-px w-full bg-neutral-800 lg:hidden"></div> <div class="flex items-center justify-center gap-3 lg:gap-6 max-lg:w-full max-lg:flex-col-reverse">
-                        <a class="inline-flex items-center w-full md:w-fit enabled:cursor-pointer justify-center whitespace-nowrap rounded-lg font-semibold disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary bg-amber-400 text-black h-10 px-4 py-2 hover:bg-amber-500/80 gap-2 border border-neutral-700 text-lg shadow-white/5 transition-all duration-300 hover:shadow-lg" href="https://wa.me/+##" target="_blank" rel="noopener noreferrer">
-                            Fale conosco <i class="fab fa-whatsapp shrink-0 origin-center size-5 ml-1"></i>
-                        </a>
-                        <div class="h-6 w-px bg-neutral-800 max-lg:hidden"></div> <div class="flex w-full items-center justify-center gap-3">
-                            <a class="inline-flex items-center md:w-fit enabled:cursor-pointer justify-center whitespace-nowrap rounded-lg disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary size-10 aspect-square shrink-0 gap-2 border border-neutral-800 bg-neutral-800/50 text-lg font-normal text-neutral-300 shadow-white/5 transition-all duration-300 focus-within:text-white hover:bg-neutral-800 hover:text-white hover:shadow-lg" href="###" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-instagram shrink-0 origin-center"></i>
-                                <span class="sr-only">Instagram</span>
-                            </a>
-                            </div>
-                    </div>
-                </div>
-                <div class="h-px w-full bg-neutral-800"></div> <p class="mt-6 text-xs text-neutral-400 max-md:text-center md:text-sm">
-                    <b>Aviso de Risco:</b> A negociação de produtos financeiros derivados envolve alto risco e pode resultar na perda total do capital investido. CFDs e outros instrumentos alavancados são complexos e podem amplificar tanto ganhos quanto perdas. Antes de operar, avalie seus objetivos, experiência e tolerância ao risco. O desempenho passado não garante resultados futuros. Não invista mais do que pode perder e, se necessário, procure aconselhamento financeiro independente. A <b>Infinity Home</b> não se responsabiliza por perdas decorrentes de operações na plataforma. Ao utilizar a <b>Infinity Home</b>, você declara compreender os riscos envolvidos e concordar com os termos da plataforma.
+    <!-- Features Section -->
+    <section class="py-20 px-6 relative z-10 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher a <span class="gradient-text">Grivo</span>?</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Negocie com segurança e facilidade na melhor plataforma
                 </p>
-                <div class="mt-6 h-px w-full bg-neutral-800"></div> <span class="mt-6 w-full text-sm font-light text-neutral-400 max-md:text-center md:text-base">© Infinity Home - 2025 | Todos os direitos reservados.</span>
+                <div class="mt-8 flex justify-center">
+                    <button class="cta-button rounded-full gradient-bg text-white font-semibold hover:shadow-xl transition glow-hover">
+                        Comece Agora <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-gradient rounded-xl p-8 hover:shadow-xl transition glow-hover h-full">
+                    <div class="feature-card-horizontal">
+                        <div class="feature-icon-horizontal">
+                            <i class="fas fa-bolt text-xl text-white"></i>
+                        </div>
+                        <div class="feature-content-horizontal">
+                            <h3 class="text-xl font-bold mb-3">Execução Instantânea</h3>
+                            <p class="text-gray-300">
+                                Ordens executadas em menos de 0.1 segundos com nossa tecnologia de ponta.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-8 hover:shadow-xl transition glow-hover h-full">
+                    <div class="feature-card-horizontal">
+                        <div class="feature-icon-horizontal">
+                            <i class="fas fa-chart-pie text-xl text-white"></i>
+                        </div>
+                        <div class="feature-content-horizontal">
+                            <h3 class="text-xl font-bold mb-3">Retornos Elevados</h3>
+                            <p class="text-gray-300">
+                                Até 95% de retorno em operações bem-sucedidas com ativos premium.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-8 hover:shadow-xl transition glow-hover h-full">
+                    <div class="feature-card-horizontal">
+                        <div class="feature-icon-horizontal">
+                            <i class="fas fa-shield-alt text-xl text-white"></i>
+                        </div>
+                        <div class="feature-content-horizontal">
+                            <h3 class="text-xl font-bold mb-3">Segurança Garantida</h3>
+                            <p class="text-gray-300">
+                                Seus fundos estão protegidos com criptografia de nível bancário.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-8 hover:shadow-xl transition glow-hover h-full">
+                    <div class="feature-card-horizontal">
+                        <div class="feature-icon-horizontal">
+                            <i class="fas fa-mobile-alt text-xl text-white"></i>
+                        </div>
+                        <div class="feature-content-horizontal">
+                            <h3 class="text-xl font-bold mb-3">Plataforma Multi-dispositivo</h3>
+                            <p class="text-gray-300">
+                                Negocie em qualquer lugar com nossos aplicativos para iOS e Android.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-8 hover:shadow-xl transition glow-hover h-full">
+                    <div class="feature-card-horizontal">
+                        <div class="feature-icon-horizontal">
+                            <i class="fas fa-copy text-xl text-white"></i>
+                        </div>
+                        <div class="feature-content-horizontal">
+                            <h3 class="text-xl font-bold mb-3">Copy Trade Automático</h3>
+                            <p class="text-gray-300">
+                                Copie os melhores traders automaticamente com nossa tecnologia exclusiva.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-8 hover:shadow-xl transition glow-hover h-full">
+                    <div class="feature-card-horizontal">
+                        <div class="feature-icon-horizontal">
+                            <i class="fas fa-exchange-alt text-xl text-white"></i>
+                        </div>
+                        <div class="feature-content-horizontal">
+                            <h3 class="text-xl font-bold mb-3">Saque Rápido</h3>
+                            <p class="text-gray-300">
+                                Saques processados em até 2 horas via PIX e criptomoedas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trading Assets -->
+    <section class="py-20 px-6 bg-gradient-to-b from-gray-900/50 to-gray-900 relative z-10">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mercados <span class="gradient-text">Disponíveis</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Negocie uma ampla variedade de ativos com condições competitivas.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="card-gradient rounded-xl p-6 text-center hover:shadow-xl transition glow-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-bitcoin text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Criptomoedas</h3>
+                    <p class="text-sm return-percentage">Retorno até 95%</p>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-6 text-center hover:shadow-xl transition glow-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-coins text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Forex</h3>
+                    <p class="text-sm return-percentage">Retorno até 93%</p>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-6 text-center hover:shadow-xl transition glow-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Índices</h3>
+                    <p class="text-sm return-percentage">Retorno até 91%</p>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-6 text-center hover:shadow-xl transition glow-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-oil-can text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Commodities</h3>
+                    <p class="text-sm return-percentage">Retorno até 90%</p>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-6 text-center hover:shadow-xl transition glow-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-building text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Ações</h3>
+                    <p class="text-sm return-percentage">Retorno até 89%</p>
+                </div>
+                
+                <div class="card-gradient rounded-xl p-6 text-center hover:shadow-xl transition glow-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-bar text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">ETF's</h3>
+                    <p class="text-sm return-percentage">Retorno até 87%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-6 bg-gray-900/50 relative z-10">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">O que nossos <span class="gradient-text">clientes</span> dizem</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Veja depoimentos real de traders que estão transformando seus resultados com a Grivo.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos M.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "A plataforma Grivo revolucionou minha forma de negociar. A execução é realmente rápida e os retornos são consistentes. Recomendo para todos que querem levar o trading a sério."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana L.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Comecei a usar o Copy Trade e os resultados foram impressioantes. Em um mês já consegui recuperar todo meu investimento inicial. O suporte também é excelente!"
+                    </p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Roberto S.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Depois de testar várias plataformas, finalmente encontrei na Grivo a combinação perfeita entre facilidade de uso e ferramentas avançadas. Os retornos de até 95% são reais!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 relative overflow-hidden z-10">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20 -z-10"></div>
+        <div class="absolute -left-40 -top-40 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl -z-10"></div>
+        <div class="absolute -right-40 -bottom-40 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl -z-10"></div>
+        
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para começar a negociar?</h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Cadastre-se agora e receba um bônus de boas-vindas de até $10,000 para praticar em nossa conta demo.
+                </p>
+                <a class="cta-button rounded-full gradient-bg text-white font-semibold hover:shadow-xl transition glow-hover" href="cadastro">
+                    Abrir Conta Gratuita <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                
+                <!-- Payment methods section -->
+                <div class="mt-10">
+                    <p class="text-white mb-3">Depósitos e saques via:</p>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <i class="fab fa-pix pix-icon"></i>
+                            <span class="text-white">PIX</span>
+                        </div>
+                        <div class="payment-method">
+                            <i class="fab fa-ethereum usdt-icon"></i>
+                            <span class="text-white">USDT</span>
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-credit-card card-icon"></i>
+                            <span class="text-white">Cartão</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12 px-6 relative z-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="https://i.imgur.com/LrZVH8u.png" alt="Grivo Logo" class="h-8">
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        A plataforma mais avançada para trading de opções binárias com tecnologia de ponta e suporte especializado.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-500 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Links Rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Início</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Plataforma</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Copy Trade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Legal</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Serviço</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Cookies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Isenção de Responsabilidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Regulamentação</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contato</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-500"></i>
+                            <span class="text-gray-400">suporte@grivo.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2023 Grivo. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-6 opacity-70">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="h-6 opacity-70">
+                    <i class="fab fa-ethereum text-2xl opacity-70"></i>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
+        // Simple script for button pulse effect on hover
         document.addEventListener('DOMContentLoaded', function() {
-            // Menu Mobile
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const closeMobileMenuButton = document.getElementById('close-mobile-menu-button');
-            const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
-            const mobileMenuContent = mobileMenuDrawer.querySelector('div > div'); // O div interno que desliza
-
-            if (mobileMenuButton && mobileMenuDrawer && closeMobileMenuButton && mobileMenuContent) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenuDrawer.classList.remove('menu-hidden');
-                    // Força reflow para garantir que a transição funcione
-                    void mobileMenuContent.offsetWidth;
-                    mobileMenuContent.classList.remove('-translate-x-full');
-                    mobileMenuContent.classList.add('translate-x-0');
+            const pulseButtons = document.querySelectorAll('.btn-pulse');
+            
+            pulseButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.classList.add('animate-pulse');
                 });
-
-                const closeMenu = () => {
-                    mobileMenuContent.classList.remove('translate-x-0');
-                    mobileMenuContent.classList.add('-translate-x-full');
-                    // Espera a transição terminar antes de esconder o overlay
-                    setTimeout(() => {
-                         mobileMenuDrawer.classList.add('menu-hidden');
-                    }, 300); // Tempo da transição
-                };
-
-                closeMobileMenuButton.addEventListener('click', closeMenu);
-                // Fechar ao clicar fora do menu
-                mobileMenuDrawer.addEventListener('click', (event) => {
-                    if (event.target === mobileMenuDrawer) {
-                        closeMenu();
+                
+                button.addEventListener('mouseleave', function() {
+                    this.classList.remove('animate-pulse');
+                });
+            });
+            
+            // Rating stars functionality
+            const stars = document.querySelectorAll('.rating-star');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const value = parseInt(this.getAttribute('data-value'));
+                    
+                    // Reset all stars
+                    stars.forEach(s => {
+                        s.textContent = '☆';
+                        s.classList.remove('text-yellow-400');
+                    });
+                    
+                    // Fill stars up to the clicked one
+                    for (let i = 0; i < value; i++) {
+                        stars[i].textContent = '★';
+                        stars[i].classList.add('text-yellow-400');
                     }
                 });
-            }
-
-            // Dropdown do Menu Desktop
-            const desktopMenuButton = document.getElementById('desktop-menu-dropdown-button');
-            const desktopMenuContent = document.getElementById('desktop-menu-dropdown-content');
-            const desktopMenuArrow = document.getElementById('desktop-menu-arrow');
-
-            if (desktopMenuButton && desktopMenuContent && desktopMenuArrow) {
-                desktopMenuButton.addEventListener('click', () => {
-                    const isExpanded = desktopMenuButton.getAttribute('aria-expanded') === 'true';
-                    desktopMenuButton.setAttribute('aria-expanded', !isExpanded);
-                    desktopMenuContent.classList.toggle('menu-hidden');
-                    desktopMenuArrow.classList.toggle('rotate-180');
-                });
-
-                // Fechar ao clicar fora
-                document.addEventListener('click', (event) => {
-                    if (!desktopMenuButton.contains(event.target) && !desktopMenuContent.contains(event.target)) {
-                        desktopMenuButton.setAttribute('aria-expanded', 'false');
-                        desktopMenuContent.classList.add('menu-hidden');
-                        desktopMenuArrow.classList.remove('rotate-180');
-                    }
-                });
-            }
-
-             // Dropdown Legal do Rodapé
-            const footerLegalButton = document.getElementById('footer-legal-button');
-            const footerLegalDropdown = document.getElementById('footer-legal-dropdown');
-            const footerLegalArrow = document.getElementById('footer-legal-arrow');
-
-            if (footerLegalButton && footerLegalDropdown && footerLegalArrow) {
-                footerLegalButton.addEventListener('click', (event) => {
-                    event.stopPropagation(); // Impede que o clique feche imediatamente o dropdown
-                    const isExpanded = footerLegalButton.getAttribute('aria-expanded') === 'true';
-                    footerLegalButton.setAttribute('aria-expanded', !isExpanded);
-                    footerLegalDropdown.classList.toggle('menu-hidden');
-                    footerLegalArrow.classList.toggle('rotate-180'); // Gira a seta
-                });
-
-                // Fechar ao clicar fora
-                document.addEventListener('click', (event) => {
-                    if (!footerLegalButton.contains(event.target) && !footerLegalDropdown.contains(event.target)) {
-                        if (footerLegalButton.getAttribute('aria-expanded') === 'true') {
-                            footerLegalButton.setAttribute('aria-expanded', 'false');
-                            footerLegalDropdown.classList.add('menu-hidden');
-                            footerLegalArrow.classList.remove('rotate-180');
-                        }
-                    }
-                });
-            }
-
-
-            // Funcionalidade do Carousel
-            function setupCarousel(carouselId) {
-                const carouselElement = document.getElementById(carouselId);
-                if (!carouselElement) return;
-
-                const track = carouselElement.querySelector('.carousel-track');
-                const items = Array.from(track.children);
-                const nextButton = carouselElement.querySelector('[data-slide="next"]');
-                const prevButton = carouselElement.querySelector('[data-slide="prev"]');
-                if (!track || !nextButton || !prevButton || items.length === 0) return;
-
-                let itemWidth = items[0].getBoundingClientRect().width + parseFloat(getComputedStyle(items[0]).marginLeft) * 2; // Inclui margin
-                let currentIndex = 0;
-                let itemsVisible = Math.floor(carouselElement.offsetWidth / itemWidth);
-
-                function updateItemsVisible() {
-                     itemWidth = items[0].getBoundingClientRect().width + parseFloat(getComputedStyle(items[0]).paddingLeft) + parseFloat(getComputedStyle(items[0]).paddingRight); // Largura + padding
-                     const containerWidth = carouselElement.querySelector('.carousel-track').parentNode.offsetWidth;
-                     itemsVisible = Math.max(1, Math.floor(containerWidth / itemWidth)); // Calcula quantos itens cabem
-
-                     // Ajusta a largura dos itens se necessário (ex: basis-1/3 em md)
-                     items.forEach(item => {
-                        // Tenta obter a largura baseada nas classes Tailwind responsivas
-                        // Este é um ponto complexo sem JS framework, pode precisar de ajustes
-                        if (window.innerWidth >= 1024) { // lg
-                             item.style.flexBasis = `calc(${100 / 4}% - 0.75rem)`; // basis-1/4 com pl-3
-                        } else if (window.innerWidth >= 768) { // md
-                             item.style.flexBasis = `calc(${100 / 3}% - 0.75rem)`; // basis-1/3 com pl-3
-                        } else if (window.innerWidth >= 640) { // sm
-                             item.style.flexBasis = `calc(${100 / 2}% - 0.75rem)`; // basis-1/2 com pl-3
-                        } else {
-                             item.style.flexBasis = `calc(100% - 0.75rem)`; // basis-full com pl-3
-                        }
-                     });
-                     itemWidth = items[0].getBoundingClientRect().width + parseFloat(getComputedStyle(items[0]).paddingLeft); // Recalcula com padding-left (pl-3)
-                     moveToSlide(currentIndex); // Reajusta a posição
-                }
-
-
-                function moveToSlide(index) {
-                    // Garante que o índice não saia dos limites
-                    const maxIndex = items.length - itemsVisible;
-                    currentIndex = Math.max(0, Math.min(index, maxIndex));
-                    const offset = -currentIndex * itemWidth;
-                    track.style.transform = `translateX(${offset}px)`;
-                    updateButtons();
-                }
-
-                function updateButtons() {
-                    prevButton.disabled = currentIndex === 0;
-                    nextButton.disabled = currentIndex >= items.length - itemsVisible;
-                    prevButton.classList.toggle('opacity-50', prevButton.disabled);
-                    nextButton.classList.toggle('opacity-50', nextButton.disabled);
-                }
-
-                nextButton.addEventListener('click', () => {
-                    moveToSlide(currentIndex + 1);
-                });
-
-                prevButton.addEventListener('click', () => {
-                    moveToSlide(currentIndex - 1);
-                });
-
-                // Atualiza na redimensão da janela
-                window.addEventListener('resize', updateItemsVisible);
-
-                // Configuração inicial
-                updateItemsVisible();
-            }
-
-            setupCarousel('beneficios-carousel');
-            setupCarousel('depoimentos-carousel');
-
-
-            // Funcionalidade do Accordion
-            const accordion = document.getElementById('faq-accordion');
-            if (accordion) {
-                const triggers = accordion.querySelectorAll('.accordion-trigger');
-                triggers.forEach(trigger => {
-                    trigger.addEventListener('click', function() {
-                        const content = this.parentElement.nextElementSibling;
-                        const arrow = this.querySelector('.accordion-arrow');
-                        const item = this.closest('.accordion-item');
-                        const isOpen = content.classList.contains('accordion-content-visible');
-
-                        // Fecha todos os outros itens
-                        accordion.querySelectorAll('.accordion-item').forEach(otherItem => {
-                            if (otherItem !== item) {
-                                const otherContent = otherItem.querySelector('.accordion-content');
-                                const otherArrow = otherItem.querySelector('.accordion-arrow');
-                                otherContent.classList.remove('accordion-content-visible');
-                                otherContent.classList.add('accordion-content-hidden');
-                                if (otherArrow) otherArrow.classList.remove('rotate-180');
-                                otherItem.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
-                            }
-                        });
-
-                        // Abre ou fecha o item clicado
-                        if (isOpen) {
-                            content.classList.remove('accordion-content-visible');
-                            content.classList.add('accordion-content-hidden');
-                            if (arrow) arrow.classList.remove('rotate-180');
-                            this.setAttribute('aria-expanded', 'false');
-                        } else {
-                            content.classList.remove('accordion-content-hidden');
-                            content.classList.add('accordion-content-visible');
-                             if (arrow) arrow.classList.add('rotate-180');
-                            this.setAttribute('aria-expanded', 'true');
+                
+                // Hover effect
+                star.addEventListener('mouseenter', function() {
+                    const value = parseInt(this.getAttribute('data-value'));
+                    
+                    stars.forEach((s, index) => {
+                        if (index < value) {
+                            s.classList.add('text-yellow-200');
                         }
                     });
                 });
-                 // Abre o primeiro item por padrão
-                const firstTrigger = accordion.querySelector('.accordion-trigger');
-                if (firstTrigger) {
-                    firstTrigger.click(); // Simula um clique para abrir
-                }
-            }
-
+                
+                star.addEventListener('mouseleave', function() {
+                    stars.forEach(s => {
+                        s.classList.remove('text-yellow-200');
+                    });
+                });
+            });
         });
     </script>
 </body>

@@ -16,8 +16,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Constantes da API externa
-const EXTERNAL_API_BASE_URL = "https://backoffice.homeinfinity.io/api/v1";
-const REGISTER_TOKEN = "22c4845a-5aa8-47d1-8b24-fd5073d4982f";
+const EXTERNAL_API_BASE_URL = "https://backoffice.grivobroker.com/api/v1";
+const REGISTER_TOKEN = "2805ee11-f256-4f8f-aafb-bcc87dc5331d";
 
 //Rota para servir a página inicial HTML
 app.get("", (req, res) => { // Renomeado para evitar conflito com POST /login
