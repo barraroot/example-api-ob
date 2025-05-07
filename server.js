@@ -16,12 +16,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Constantes da API externa
-const EXTERNAL_API_BASE_URL = "https://backoffice.brandopties.com/api/v1";
-const REGISTER_TOKEN = "758b7fe1-6f7b-4c3a-a9b1-c81f746da091";
+const EXTERNAL_API_BASE_URL = "https://backoffice.homeinfinity.io/api/v1";
+const REGISTER_TOKEN = "22c4845a-5aa8-47d1-8b24-fd5073d4982f";
 
 //Rota para servir a página inicial HTML
 app.get("", (req, res) => { // Renomeado para evitar conflito com POST /login
-    res.sendFile(path.join(__dirname, "public", "login", "index.html"));
+    res.sendFile(path.join(__dirname, "public", "index.html"));
   });
 
 // Rota para servir a página de cadastro HTML

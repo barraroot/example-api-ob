@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro com Axios</title>
+    <title>Cadastro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Adicionar Axios via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -201,7 +201,7 @@
                 messageArea.textContent = result.message || "Cadastro realizado com sucesso! Abrindo sistema...";
                 messageArea.classList.add("text-green-500");
                 form.reset(); // Limpa o formulário
-                window.location.href = "https://traderoom.brandopties.com/auth/external/" + result.token; // Redireciona para a página de login
+                window.location.href = "https://traderoom.homeinfinity.io/auth/external/" + result.token; // Redireciona para a página de login
             } catch (error) {
                 // Erros (status não-2xx ou erros de rede) entram aqui
                 console.error("Erro durante o cadastro (Axios):", error);
