@@ -1,0 +1,27 @@
+.elementor-kit-5{--e-global-color-primary:#FFFFFF;--e-global-color-secondary:#000000;--e-global-color-text:#FFFFFF;--e-global-color-accent:#6A14D1;--e-global-typography-primary-font-family:"Poppins";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Poppins";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Poppins";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Poppins";--e-global-typography-accent-font-weight:500;background-color:#000000;}.elementor-kit-5 button,.elementor-kit-5 input[type="button"],.elementor-kit-5 input[type="submit"],.elementor-kit-5 .elementor-button{background-color:#6A14D1;font-family:"Poppins", Sans-serif;color:#FFFFFF;}.elementor-kit-5 e-page-transition{background-color:#FFBC7D;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1280px;}.e-con{--container-max-width:1280px;--container-default-padding-top:7.5em;--container-default-padding-right:0em;--container-default-padding-bottom:7.5em;--container-default-padding-left:0em;}.elementor-widget:not(:last-child){--kit-widget-spacing:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}.site-header .site-branding{flex-direction:column;align-items:stretch;}.site-header{padding-inline-end:0px;padding-inline-start:0px;}.site-footer .site-branding{flex-direction:column;align-items:stretch;}@media(max-width:1366px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:90%;}.e-con{--container-max-width:90%;--container-default-padding-top:7.5em;--container-default-padding-right:0em;--container-default-padding-bottom:7.5em;--container-default-padding-left:0em;}}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:90%;}.e-con{--container-max-width:90%;--container-default-padding-top:5em;--container-default-padding-right:0em;--container-default-padding-bottom:5em;--container-default-padding-left:0em;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:100%;}.e-con{--container-max-width:100%;--container-default-padding-top:4em;--container-default-padding-right:1.25em;--container-default-padding-bottom:4em;--container-default-padding-left:1.25em;}}@media(min-width:2400px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1280px;}.e-con{--container-max-width:1280px;--container-default-padding-top:7.5em;--container-default-padding-right:0em;--container-default-padding-bottom:7.5em;--container-default-padding-left:0em;}}/* Start custom CSS */html, body {
+overflow-x: hidden;
+}
+ /*ULTRAWIDE*/
+@media(min-width: 2400px){
+  
+}
+
+/*DESKTOP*/
+@media(min-width: 1367px) and (max-width: 2399px){
+  
+}
+
+/*NOTEBOOK*/
+@media(min-width: 1025px) and (max-width: 1366px){
+  
+}
+
+/*TABLET*/
+@media(min-width: 768px) and (max-width: 1024px){
+  
+}
+
+/*MOBILE*/
+@media(max-width: 767px){
+  
+}/* End custom CSS */

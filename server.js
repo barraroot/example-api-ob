@@ -170,5 +170,5 @@ app.listen(port, "0.0.0.0", () => {
   console.log(`Página de recuperar senha: http://localhost:${port}/reset-password-page`);
 });
 /*
-dominio: grivobroker.com
+dominio: dolarbroker.com
 */
