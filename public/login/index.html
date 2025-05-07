@@ -7,7 +7,10 @@
   <title>Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Adicionar Axios via CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+  <style>
+
+  </style>
 </head>
 
 <body class="relative text-white flex items-center justify-center min-h-screen bg-[#0f0f0f] overflow-hidden">
@@ -36,7 +39,7 @@
             </svg>
           </span>
           <input type="email" placeholder="Digite seu e-mail" name="email" id="email"
-            class="w-full pl-10 pr-3 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#00CDE9]">
+            class="w-full pl-10 pr-3 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#E4D182]">
         </div>
       </div>
       <div>
@@ -51,7 +54,7 @@
             </svg>
           </span>
           <input id="senha" type="password" placeholder="Digite sua senha" name="senha" 
-            class="w-full pl-10 pr-10 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#00CDE9]">
+            class="w-full pl-10 pr-10 py-2 rounded-xl bg-gray-800 border border-gray-600 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#E4D182]">
           <button type="button" onclick="toggleSenha()"
             class="absolute inset-y-0 right-3 flex items-center text-gray-400">
             <svg id="iconeOlho" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
@@ -66,15 +69,15 @@
       </div>
 
       <div class="text-right">
-        <a href="/reset-password-page" class="text-sm text-[#00CDE9] hover:underline">Esqueceu a senha?</a>
+        <a href="/reset-password-page" class="text-sm text-[#E4D182] hover:underline">Esqueceu a senha?</a>
       </div>
 
       <!-- Div para exibir mensagens de erro/sucesso -->
       <div id="messageArea" class="text-sm text-center"></div>
 
       <button type="submit"
-        class="w-full bg-[#00CDE9] text-white py-2 rounded-xl hover:bg-[#00bad1] transition-colors text-sm">Entrar</button>
-      <a href="/cadastro" class="block text-center text-sm text-[#00CDE9] hover:underline">Não tem uma
+        class="w-full bg-[#E4D182] text-black py-2 rounded-xl hover:bg-[#ffec9e] transition-colors text-sm">Entrar</button>
+      <a href="/cadastro" class="block text-center text-sm text-[#E4D182] hover:underline">Não tem uma
         conta? Cadastre-se</a>
     </form>
   </div>

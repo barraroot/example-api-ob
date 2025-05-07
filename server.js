@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Constantes da API externa
-const EXTERNAL_API_BASE_URL = "https://backoffice.grivobroker.com/api/v1";
+const EXTERNAL_API_BASE_URL = "https://backoffice.dolarbroker.com/api/v1";
 const REGISTER_TOKEN = "2805ee11-f256-4f8f-aafb-bcc87dc5331d";
 
 //Rota para servir a página inicial HTML
