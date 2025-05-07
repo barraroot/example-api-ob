@@ -121,7 +121,7 @@
 
         try {
             // Usar Axios para fazer a requisição POST
-            const response = await axios.post("/login", dataToSend, {
+            const response = await axios.post("/auth", dataToSend, {
                 headers: {
                     "Content-Type": "application/json",
                 }
@@ -148,10 +148,10 @@
                     if (errorData.missing) {
                         errorMessage += ` Campos faltando: ${errorData.missing.join(", ")}`;
                     }
-                } else if (errorData.message && errorData.errorDetails) {
-                    errorMessage = `${errorData.message} Detalhes: ${JSON.stringify(errorData.errorDetails)}`;
-                } else if (errorData.message) {
-                    errorMessage = errorData.message;
+                } else if (errorData.errorDetails.message && errorData.errorDetails) {
+                    errorMessage = `${errorData.errorDetails.message}`;
+                } else if (errorData.errorDetails.message) {
+                    errorMessage = errorData.errorDetails.message;
                 }
             } else if (error.request) {
                 // A requisição foi feita mas nenhuma resposta foi recebida

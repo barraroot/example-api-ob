@@ -30,7 +30,7 @@ app.get("/cadastro", (req, res) => {
 });
 
 // Rota para servir a página de login HTML
-app.get("/login-page", (req, res) => { // Renomeado para evitar conflito com POST /login
+app.get("/login", (req, res) => { // Renomeado para evitar conflito com POST /login
   res.sendFile(path.join(__dirname, "public", "login", "index.html"));
 });
 
@@ -97,20 +97,24 @@ app.post("/register", async (req, res, next) => {
 });
 
 // Rota para autenticação de usuário (API)
-app.post("/login", async (req, res, next) => {
-  const { email } = req.body;
+app.post("/auth", async (req, res, next) => {
+  const { email, password } = req.body;
 
   if (!email) {
     return res.status(400).json({ error: "O campo email é obrigatório" });
   }
 
+  if(!password) {
+    return res.status(400).json({ error: "O campo senha é obrigatório" });
+  }
+
   try {
     console.log(
-      `Enviando requisição de login para: ${EXTERNAL_API_BASE_URL}/auth-external`
+      `Enviando requisição de login para: ${EXTERNAL_API_BASE_URL}/auth`
     );
     const response = await axios.post(
-      `${EXTERNAL_API_BASE_URL}/auth-external`,
-      { email },
+      `${EXTERNAL_API_BASE_URL}/auth`,
+      { email, password },
       {
         headers: {
           token: REGISTER_TOKEN, // Adicionado o token aqui

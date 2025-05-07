@@ -18,7 +18,7 @@
     <div class="w-full max-w-2xl mx-4 p-6 bg-[#121212]/80 rounded-xl shadow-xl z-10">
         <div class="flex items-center justify-between mb-6">
             <div>
-                <h2 class="text-2xl font-bold">Cadastre-se (Axios)</h2>
+                <h2 class="text-2xl font-bold">Cadastre-se</h2>
                 <p class="text-sm text-gray-400">Crie uma nova conta</p>
             </div>
             <img src="../assets/logo.png" alt="Logo" class="w-28">
@@ -217,8 +217,34 @@
                             errorMessage += ` Campos faltando: ${errorData.missing.join(", ")}`;
                         }
                     } else if (errorData.message && errorData.errorDetails) {
-                        errorMessage = `${errorData.message} Detalhes: ${JSON.stringify(errorData.errorDetails)}`;
-                    } else if (errorData.message) {
+                        console.log(errorData.errorDetails.errors);
+                        for (const [key, value] of Object.entries(errorData.errorDetails.errors)) {
+                            console.log(key, value[0]);
+                            if(value[0] === "validation.unique" && key === "email") {
+                                errorMessage = "E-mail já cadastrado. Tente outro.";
+                            } else if(value[0] === "validation.unique" && key === "phone") {
+                                errorMessage = "Telefone já cadastrado. Tente outro.";
+                            } else if(value[0] === "validation.required" && key === "password") {
+                                errorMessage = "Senha é obrigatória.";
+                            } else if(value[0] === "validation.min.string" && key === "password") {
+                                errorMessage = "Senha precisa ter no minimo 8 caracteres.";                                
+                            } else if(value[0] === "validation.required" && key === "name") {
+                                errorMessage = "Nome é obrigatório.";
+                            } else if(value[0] === "validation.required" && key === "terms") {
+                                errorMessage = "Você deve aceitar os termos e condições.";
+                            } else {
+                                errorMessage = `${key}: ${value[0]}`;
+                            }
+                        }                        
+                        /*
+                        if(errorData.errorDetails.errors.length > 0) {
+                            errorMessage = `${errorData.errorDetails.errors[0].message}`;
+                        } else {
+                            errorMessage = `${errorData.errorDetails.message}`;
+                        }
+                        //errorMessage = `${errorData.errorDetails.errors}`
+                        */
+                    } else if (errorData.message.errors) {
                         errorMessage = errorData.message;
                     }
                 } else if (error.request) {
