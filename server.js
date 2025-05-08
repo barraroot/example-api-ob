@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Constantes da API externa
 const EXTERNAL_API_BASE_URL = "https://backoffice.dolarbroker.com/api/v1";
-const REGISTER_TOKEN = "2805ee11-f256-4f8f-aafb-bcc87dc5331d";
+const REGISTER_TOKEN = "5a97b5a7-247c-4342-a540-e55abe0a0f81";
 
 //Rota para servir a página inicial HTML
 app.get("", (req, res) => { // Renomeado para evitar conflito com POST /login
